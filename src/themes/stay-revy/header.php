@@ -9,6 +9,7 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
+    <link rel="stylesheet" href="https://use.typekit.net/nuv1mhu.css">
     <script src="https://kit.fontawesome.com/61d303198f.js" crossorigin="anonymous"></script>
 
     <?php wp_head(); ?>

@@ -76,16 +76,4 @@
         </div>
     </div>
 
-    <section class="section section--lg">
-        <div class="container">
-            <div class="row justify-content-center text-center">
-                <div class="col-md-10 col-lg-7 col-xl-6">
-                    <h2 class="h1 text-white">Maecenas sed diam eget</h2>
-                    <p class="lead text-muted">
-                        Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 </header>
