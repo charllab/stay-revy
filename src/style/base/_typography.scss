@@ -12,7 +12,7 @@ html {
 
 @include media-breakpoint-up(xxl) {
     html {
-        font-size: 18px;
+        font-size: 20px;
     }
 }
 
@@ -26,12 +26,27 @@ body {
     line-height: 1.4;
 }
 
+.font-family-body {
+    font-family: $font-family-sans-serif;
+}
+
 .small, small {
     font-size: 90%;
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+h1, .h1 {
+    font-size: 1.7rem;
+    line-height: 1.25;
+}
+
+h2, .h2 {
+    font-size: 1.45rem;
+    line-height: 1.2;
 }
 
 .spaced-list {
@@ -60,4 +75,17 @@ body {
 
 .list-unstyled {
     margin-bottom: 1rem;
+}
+
+@include media-breakpoint-up(lg) {
+
+    h1, .h1 {
+        font-size: 3.25rem;
+        line-height: 1.185;
+    }
+
+    h2, .h2 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
 }

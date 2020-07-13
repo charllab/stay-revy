@@ -67,13 +67,6 @@ mark {
 	background-color: $white;
 }
 
-// Containers
-
-.container-fluid,
-.container {
-    padding: 0 2.25rem;
-}
-
 @include media-breakpoint-down(lg) {
     .container {
         padding: 0 2.25rem;

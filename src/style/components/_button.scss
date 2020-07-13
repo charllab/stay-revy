@@ -1,3 +1,8 @@
 button {
     cursor: pointer;
 }
+
+button, .btn {
+    font-weight: 700;
+    border-radius: 0;
+}

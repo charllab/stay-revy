@@ -1,7 +1,31 @@
 jQuery(function () {
 
-    // Auto target _blank external links
-    targetBlankExternalLinks();
+    // Hero Carousel
+    var owlhero = jQuery('#hero-slide').owlCarousel({
+        loop: true,
+        margin: 0,
+        responsiveClass: true,
+        dots: true,
+        nav: false,
+        autoplaySpeed: 1500,
+        autoplayTimeout: 9000,
+        autoplay: false,
+        items: 1,
+        navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
+        responsive: {
+            1638: {
+                dots: false,
+                nav: true,
+            }
+        },
+        onDragged: sliderCallback,
+    });
+
+    // Hero Carousel slider drag resets
+    function sliderCallback(event) {
+        owlhero.trigger('stop.owl.autoplay');
+        owlhero.trigger('play.owl.autoplay');
+    };
 
     // Remove WP Block element iframe classes
     if (jQuery('.wp-block-embed-youtube').length) {
@@ -16,6 +40,26 @@ jQuery(function () {
             scrollTop: jQuery(this.hash).offset().top
         }, 1000);
     });
+
+    // date picker
+    if (jQuery('.datePickW input').length) {
+        jQuery('.datePickW input').daterangepicker({
+            startDate: moment(),
+            endDate: moment().add(1, 'days')
+        });
+    }
+
+    jQuery('#checkInForm').on('submit', function (e) {
+        e.preventDefault();
+
+        var data = jQuery(this).serialize(),
+            inputVal = jQuery('#checkInAndOut').val(),
+            inputVals = inputVal.split(' - ');
+
+        location.href = "https://book.webrez.com/v31/#/property/2100/location/0/redirect?" + data + "&date_from=" + moment(inputVals[0]).format('YYYYMMDD') + "&date_to=" + moment(inputVals[1]).format('YYYYMMDD');
+    });
+
+
 });
 
 var trackEvent = function (name, options) {

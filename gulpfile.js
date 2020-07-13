@@ -71,7 +71,8 @@ const headerJS = [
     'node_modules/selectize/dist/js/standalone/selectize.min.js',
     'node_modules/aos/dist/aos.js',
     'src/js/modernizr.custom.js',
-    'node_modules/owl.carousel/dist/owl.carousel.min.js'
+    'node_modules/owl.carousel/dist/owl.carousel.min.js',
+    'src/js/daterangepicker.js'
 ];
 
 const footerJS = [
