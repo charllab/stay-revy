@@ -4,24 +4,32 @@
 
 .main-nav {
 
-    .navbar {
-        padding-left: 0;
-        padding-right: 0;
+    .nav__skinny-burger {
+        width: 28px;
+        height: auto;
     }
 
-    .navbar-dark .navbar-toggler {
-        background: $white;
-        outline: none;
+    .navbar {
+        padding: $spacer*1.5 0;
+    }
+
+    .navbar-toggler {
+        background: transparent;
 
         .fa-bars {
-            color: $body-color;
+            color: white;
             font-size: 150%;
             line-height: 1.2;
+        }
+
+        &:focus {
+            outline: none;
+            background-color: $body-color;
         }
     }
 
     .nav-logo img {
-        width: 124px;
+        width: 164px;
         height: auto;
     }
 

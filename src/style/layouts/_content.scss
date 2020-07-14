@@ -11,6 +11,10 @@ a:focus {
     background-color: rgba(25, 81, 124, 0.25);
 }
 
+p:empty {
+    display: none;
+}
+
 .section {
     position: relative;
     width: 100%;
@@ -32,6 +36,11 @@ a:focus {
 }
 
 @include media-breakpoint-up(lg) {
+
+    .general-sect__padding {
+        padding-top: $spacer*4;
+        padding-bottom: $spacer*4;
+    }
 
     .general-sect__pb {
         padding-bottom: $spacer*4;
@@ -102,7 +111,7 @@ a:focus {
 
 .block__tint-overlay {
     background-color: $secondary;
-    opacity: .8;
+    opacity: .56;
     top: 0;
     left: 0;
     width: 100%;
@@ -112,8 +121,8 @@ a:focus {
 
 .hero-outer--fullheight,
 .hero-slide--fullheight {
-    min-height: $spacer*34;
-    height: 60vh;
+    min-height: 800px;
+    height: 70vh;
 }
 
 .hero-slide__container {
@@ -207,7 +216,7 @@ a:focus {
 
 .slider__title {
     color: white;
-    margin-top: -$spacer*6;
+    margin-top: -$spacer*11;
 }
 .slider__title--intro-line {
     color: #B2C57F;
@@ -215,7 +224,8 @@ a:focus {
     line-height: 1.2;
     font-family: $font-family-sans-serif;
     display: block;
-    margin-bottom: $spacer*.35;
+    margin-bottom: $spacer*.65;
+    font-weight: 700;
 }
 .slider__title--sub-line {
     font-size: 1.4rem;
@@ -223,6 +233,16 @@ a:focus {
     font-family: $font-family-sans-serif;
     display: block;
     font-weight: 700;
+}
+
+@include media-breakpoint-down(xs) {
+
+    .slider__title--intro-line {
+        max-width: 260px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }
 
 
@@ -247,10 +267,15 @@ a:focus {
 
 }
 
-// ************ FrontPage Hero check-in styles ************ //
+// ************ Layouts styles ************ //
 
 .layout__banner-check-in {
     bottom: $spacer;
+}
+
+.layout__pingpong--py {
+    padding-top: $spacer*3;
+    padding-bottom: $spacer*2;
 }
 
 @include media-breakpoint-up(md) {
@@ -265,6 +290,14 @@ a:focus {
 
     .layout__banner-check-in {
         bottom: $spacer*4;
+    }
+
+}
+
+@include media-breakpoint-up(xl) {
+
+    .layout--pingpong--maxwidth {
+        max-width: 730px;
     }
 
 }
@@ -285,7 +318,163 @@ a:focus {
 @include media-breakpoint-up(lg) {
 
     .activity-card__card {
-        height: $spacer*22;
+        height: $spacer*34;
     }
 
+}
+
+
+
+
+
+
+
+// ******** listings copy & paste ******** //
+
+.listing-page-sidemenu {
+    background-color: rgba(#d6e4e0, .75);
+    color: green;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 0;
+
+    @include media-breakpoint-up(lg) {
+        border-radius: .5rem;
+    }
+}
+
+.listing-page-toggle {
+    margin-bottom: 2rem;
+}
+
+.listing-block-wrapper {
+    background-color: white;
+    box-shadow: $box-shadow;
+    margin-bottom: 2rem;
+    border-radius: .5rem;
+}
+
+.listing-block-img {
+    flex: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    border: .5rem solid $white;
+
+    @include media-breakpoint-up(lg) {
+        width: 375px;
+    }
+
+    @include media-breakpoint-down(md) {
+        height: 300px;
+    }
+}
+
+.listing-block-content {
+    padding: 2rem 1rem;
+}
+
+.listing-icons {
+    margin-top: auto;
+    margin-bottom: 1rem;
+    color: grey;
+    text-transform: uppercase;
+    font-size: .75rem; //14px
+    font-weight: 700;
+
+    li {
+        padding-right: .75rem;
+    }
+
+    i.fas {
+        margin-right: .25rem;
+        font-size: .875rem;
+        color: $secondary;
+    }
+}
+
+// accommodation page specific
+.accommodation-titleblock {
+    padding-top: 3.5rem;
+    padding-bottom: .5rem;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.accommodation-details {
+
+    .listing-icons {
+        font-size: 90%;
+    }
+
+    li .accommodation-details__desc {
+        text-transform: none;
+        font-weight: normal;
+    }
+}
+
+.accommodation-gallery {
+    margin-bottom: 4rem;
+
+}
+
+.accommodation-guest-title {
+    @include media-breakpoint-up(md) {
+        margin-bottom: 3rem;
+    }
+}
+
+.accommodation-guest-review-wrapper {
+    position: relative;
+    background-color: white;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    box-shadow: $box-shadow;
+    border-radius: 1rem;
+}
+
+.accommodation-guest-review-inner {
+
+    &:before {
+        content: '';
+        position: absolute;
+        background-image: url('../images/lq.svg');
+        background-repeat: no-repeat;
+        width: 52px;
+        height: 42px;
+        z-index: 20;
+        top: -1rem;
+        left: 2rem;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        background-image: url('../images/rq.svg');
+        background-repeat: no-repeat;
+        width: 52px;
+        height: 42px;
+        z-index: 20;
+        bottom: -1rem;
+        right: 2rem;
+    }
+
+    .owl-item {
+        font-size: 120%;
+
+        .item {
+            width: 75%;
+            margin: auto;
+            text-align: center;
+        }
+    }
+
+    .owl-carousel .owl-stage {
+        display: flex;
+        align-items: center;
+    }
 }

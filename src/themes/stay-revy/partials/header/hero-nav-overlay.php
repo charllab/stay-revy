@@ -1,12 +1,12 @@
-<header id="header" class="main-nav position-absolute w-100 z-index-lvl-1 bg-success">
+<header id="header" class="main-nav position-absolute w-100 z-index-lvl-1">
 
-    <nav class="navbar navbar-dark">
-        <div class="container bg-warning px-50">
+    <nav class="navbar">
+        <div class="container px-50">
 
             <div class="row no-gutters w-100 justify-content-end align-items-center">
-                <div class="col-6 bg-success">
+                <div class="col-6">
                     <div class="nav-logo text-center">
-                        <a href="<?php echo esc_url(home_url('/')); ?>">
+                        <a href="<?php echo esc_url(home_url('/')); ?>" tabindex="-1">
                             <img src="<?php bloginfo('template_url'); ?>/images/logo.svg"
                                  alt="<?php bloginfo('name'); ?> - Logo"
                                  class="img-fluid">
@@ -14,9 +14,10 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-3 text-right bg-info">
-                    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target=".main-navigation" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-bars"></i>
+                <div class="col-3 text-right">
+                    <button class="navbar-toggler ml-auto my-0" type="button" data-toggle="collapse" data-target=".main-navigation" aria-expanded="false" aria-label="Toggle navigation">
+                        <img src="<?php bloginfo('template_url'); ?>/images/skinny-burger.svg"
+                             alt="<?php bloginfo('name'); ?> - menu" class="nav__skinny-burger py-250">
                     </button>
                 </div>
             </div>

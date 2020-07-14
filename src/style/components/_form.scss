@@ -1,0 +1,18 @@
+.check-in__form-group {
+    margin-bottom: $spacer*1.15;
+}
+.check-in__form-label {
+    margin-bottom: $spacer*.75;
+}
+
+@include media-breakpoint-up(md) {
+
+    .check-in__form-group {
+        margin-bottom: $spacer*.5;
+    }
+
+    .check-in__form-label {
+        margin-bottom: $spacer*.95;
+    }
+
+}

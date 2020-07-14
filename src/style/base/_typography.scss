@@ -23,7 +23,7 @@ body {
     -webkit-font-smoothing: antialiased;
     font-family: $font-family-base;
     -webkit-overflow-scrolling: touch;
-    line-height: 1.4;
+    line-height: 1.2;
 }
 
 .font-family-body {
@@ -45,8 +45,37 @@ h1, .h1 {
 }
 
 h2, .h2 {
-    font-size: 1.45rem;
+    font-size: 1.38rem;
     line-height: 1.2;
+}
+
+h3, .h3 {
+    font-size: 1.25rem;
+    line-height: 1.2;
+}
+
+h4, .h4 {
+    font-size: 1.05rem;
+    line-height: 1.2;
+}
+
+h5, .h5 {
+    font-size: .8rem;
+    line-height: 1.2;
+}
+
+p {
+    margin-bottom: $spacer;
+}
+
+.lead-xl {
+    font-size: 1.45rem;
+    font-weight: 700;
+}
+
+.lead {
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
 .spaced-list {
@@ -55,10 +84,6 @@ h2, .h2 {
 
 .spaced-list li {
     margin-bottom: .5rem;
-}
-
-.lead strong {
-    font-weight: 600;
 }
 
 .text-md {
@@ -88,4 +113,37 @@ h2, .h2 {
         font-size: 2rem;
         line-height: 1.2;
     }
+
+    h3, .h3 {
+        font-size: 1.45rem;
+        line-height: 1.2;
+    }
+
+    h4, .h4 {
+        font-size: 1.28rem;
+        line-height: 1.2;
+    }
+
+    h5, .h5 {
+        font-size: .98rem;
+        line-height: 1.2;
+    }
+
+    .lead-xl {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+}
+
+.hyphens--auto {
+    -ms-word-break: break-all;
+    word-break: break-all;
+
+    /* Non standard for WebKit */
+    word-break: break-word;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
 }

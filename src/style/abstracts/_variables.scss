@@ -5,14 +5,14 @@
 $enable-print-styles: false;
 
 // Colors
-$primary: #3D4F23;
-$secondary: #1B1B1B;
-
-$body-color: #3B3A3A;
-$headings-color: $primary;
+$primary: #3d4f23;
+$secondary: #1b1b1b;
+$body-color: #3b3a3a;
+$headings-color: $body-color;
 $input-focus-border-color: $primary;
 
 $selection-color: #d9edf7;
+$box-shadow: 0 1rem 2rem rgba(#000, .2);
 
 // Breakpoints
 $grid-breakpoints: (
@@ -39,7 +39,7 @@ $container-max-widths: (
 
 // Misc
 
-$spacer: 1.5rem; // 30px/20px
+$spacer: 1.2rem;
 
 $spacers: () !default;
 $spacers: map-merge((

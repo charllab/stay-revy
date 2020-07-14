@@ -13,14 +13,14 @@
                     </a>
                 </div>
                 <div class="col-md-5 text-center text-md-left">
-                    <p class="text-white lead">
-                        <i class="fas fa-phone-alt mr-35"></i> Phone: <a href="tel:+1<?php echo strip_tel(get_field('phone_number', 'options')); ?>" class="text-white"><?php the_field('phone_number', 'options'); ?></a>
+                    <p class="text-white">
+                        <i class="fas fa-phone-alt mr-35"></i> <strong>Tel</strong>: <a href="tel:+1<?php echo strip_tel(get_field('phone_number', 'options')); ?>" class="text-white"><?php the_field('phone_number', 'options'); ?></a>
                     </p>
-                    <p class="text-white lead">
-                        <i class="fas fa-envelope mr-35"></i> Email: <a href="mailto:<?php the_field('email_address', 'options'); ?>" class="text-white"><?php the_field('email_address', 'options'); ?></a>
+                    <p class="text-white">
+                        <i class="fas fa-envelope mr-35"></i> <strong>Email</strong>: <a href="mailto:<?php the_field('email_address', 'options'); ?>" class="text-white"><?php the_field('email_address', 'options'); ?></a>
                     </p>
-                    <p class="text-white lead mb-2">
-                        <i class="fas fa-map-marker-alt align-top pt-250 mr-35"></i> <span class="d-inline-block"> <?php echo the_field('postal_address', 'options')?></span>
+                    <p class="text-white mb-2">
+                        <i class="fas fa-map-marker-alt align-top pt-250 mr-35"></i> <span class="d-inline-block"> <strong>Address</strong>: <?php echo the_field('postal_address', 'options')?></span>
                     </p>
                     <a href="<?php echo esc_url(home_url('/contact-stay-revy')); ?>" class="btn btn-light mb-0">Contact Us</a>
                 </div>
@@ -32,10 +32,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 text-center text-md-left">
-                    <p class="mb-md-0">&copy; <?php echo Date('Y') . ' ' . get_bloginfo('name'); ?></p>
+                    <p class="mb-md-0 small">&copy; <?php echo Date('Y') . ' ' . get_bloginfo('name'); ?></p>
                 </div>
                 <div class="col-md-8 text-center text-md-right">
-                    <p class="mb-0">Designed, Developed and Hosted by <a href="https://sproing.ca" target="_blank" class="text-white">Sproing&nbsp;Creative</a>
+                    <p class="mb-0 small">Designed, Developed and Hosted by <a href="https://sproing.ca" target="_blank" class="text-white">Sproing&nbsp;Creative</a>
                     </p>
                 </div>
             </div>
