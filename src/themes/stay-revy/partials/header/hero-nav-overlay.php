@@ -1,4 +1,4 @@
-<header id="header" class="main-nav position-absolute w-100 z-index-lvl-1">
+<header id="header" class="main-nav w-100 z-index-lvl-1">
 
     <nav class="navbar">
         <div class="container px-50">
@@ -6,7 +6,7 @@
             <div class="row no-gutters w-100 justify-content-end align-items-center">
                 <div class="col-6">
                     <div class="nav-logo text-center">
-                        <a href="<?php echo esc_url(home_url('/')); ?>" tabindex="-1">
+                        <a href="<?php echo esc_url(home_url('/')); ?>" tabindex="-1" class="link--no-focus">
                             <img src="<?php bloginfo('template_url'); ?>/images/logo.svg"
                                  alt="<?php bloginfo('name'); ?> - Logo"
                                  class="img-fluid">
@@ -25,7 +25,7 @@
         </div>
     </nav>
 
-    <div class="main-navigation collapse navbar-collapse">
+    <div class="main-navigation collapse navbar-collapse bg-warning">
 
         <?php wp_nav_menu([
             'theme_location' => 'primary',

@@ -1,14 +1,14 @@
 <?php
-if(get_field('header_image')) {
-    $header_img = get_field('header_image')['sizes']['page-banner'];
+if( get_field('page_header_image') ) {
+    $headerimg = get_field('page_header_image');
 } else {
-    $header_img = get_field('default_header', 'option')['sizes']['page-banner'];
+    $headerimg = get_field('default_header', 'options');
 }
 ?>
 
-<section class="section banner">
-    <div class="banner__bg-img" style="background-image: url(<?php echo $header_img; ?>);"></div>
-    <div class="container">
+<section class="general-sect__padding position-relative" style="background: #202020 url(<?php echo $headerimg['sizes']['large']; ?>)no-repeat center center; background-size: cover;">
+    <div class="block__tint-overlay position-absolute"></div>
+    <div class="container position-relative z-index-lvl-1">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-6 text-center">
                 <h1 class="text-capitalize script-font text-white mb-0">

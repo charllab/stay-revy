@@ -16,3 +16,140 @@
     }
 
 }
+
+label {
+    font-family: $font-family-sans-serif;
+    margin-bottom: 0;
+    font-size: .777777778rem; //14px
+}
+
+.custom-select {
+    border-radius: 0px;
+    border-color: $primary;
+}
+
+// search
+
+.topsearchbox {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.vertical-searchform-wrapper {
+    background-color: $primary;
+    padding: 1rem;
+    border-radius: .25rem;
+    display: flex;
+    margin-bottom: 1rem;
+    justify-content: center;
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 0;
+    }
+
+    @include media-breakpoint-up(xl) {
+        padding: 1rem 2rem;
+        margin-bottom: 0;
+    }
+
+    .num-increment-wrap {
+        margin-left: .5rem;
+    }
+
+    label {
+        cursor: pointer;
+    }
+
+    > div {
+        margin: .5rem .25rem;
+
+        @include media-breakpoint-up(lg) {
+            margin: 0 .5rem;
+        }
+    }
+
+    label {
+        padding-right: .25rem;
+        font-size: .75rem;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 90%;
+        }
+    }
+}
+
+.num-increment-wrap {
+    min-width: 150px;
+    margin-left: auto;
+}
+.js-button-increment {
+    min-width: 40px;
+    justify-content: center;
+}
+
+
+.listing-page-sidemenu-form {
+    font-size: 1rem;
+
+    label {
+        font-size: 90%;
+        width: 100%;
+        cursor: pointer;
+        line-height: 1.75;
+    }
+
+    .custom-checkbox {
+        padding-bottom: .5rem;
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+        margin-left: auto;
+        margin-bottom: .8rem;
+    }
+
+    .custom-control-label::before {
+        background: $white;
+    }
+}
+
+.listing-page-sidemenu-content-maxwidth {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.listing-page-sidemenu-block {
+    margin-bottom: 1rem;
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 2rem;
+    }
+}
+
+.js-num-increment {
+    margin-bottom: $spacer;
+
+    .num-increment-wrap {
+        display: flex;
+    }
+
+    .form-control[readonly] {
+        width: 3rem;
+        margin: 0 5px;
+        border-radius: 0;
+        border: 1px solid rgba($primary,.25);
+        background-color: $white;
+    }
+
+    .btn {
+        font-family: $font-family-sans-serif;
+        font-weight: bold;
+        padding: .25rem .75rem;
+        font-size: 110%;
+    }
+}
+
+label.listing-page-sidemenu__label {
+    font-size: .95rem;
+    font-weight: 700;
+}

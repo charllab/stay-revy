@@ -1,5 +1,25 @@
 jQuery(function () {
 
+    // Lightbox gallery
+    jQuery('.js-gallery').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        gallery: {
+            enabled: true
+        }
+    });
+
+    // owl carousel
+    jQuery('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 0,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        autoplayTimeout: 9000,
+        items: 1,
+        dots: true
+    });
+
     // Hero Carousel
     var owlhero = jQuery('#hero-slide').owlCarousel({
         loop: true,
@@ -57,6 +77,35 @@ jQuery(function () {
             inputVals = inputVal.split(' - ');
 
         location.href = "https://book.webrez.com/v31/#/property/2100/location/0/redirect?" + data + "&date_from=" + moment(inputVals[0]).format('YYYYMMDD') + "&date_to=" + moment(inputVals[1]).format('YYYYMMDD');
+    });
+
+    jQuery(".js-num-increment > div").append('<div class="btn btn-primary js-inc js-button-increment px-50 border-0">+</div>');
+    jQuery(".js-num-increment > div").prepend('<div class="btn btn-primary js-dec js-button-increment px-50 border-0">−</div>');
+
+    jQuery(".js-button-increment").on("click", function () {
+
+        var $button = jQuery(this);
+        var oldValue = $button.parent().find("input").val().replace('+', '');
+
+        if ($button.text() == "+") {
+            var newVal = parseFloat(oldValue) + 1;
+        } else {
+            if (oldValue > 0) {
+                var newVal = parseFloat(oldValue) - 1;
+            } else {
+                newVal = 0;
+            }
+        }
+
+        $button.parent().find("input").val(newVal + '+');
+    });
+
+    jQuery('.js-update-search').on('click', function (e) {
+        e.preventDefault();
+
+        var currentUrl = [location.protocol, '//', location.host, location.pathname].join('');
+
+        location.href = currentUrl + '?' + jQuery('.js-search-form').serialize();
     });
 
 

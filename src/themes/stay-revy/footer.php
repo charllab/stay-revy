@@ -1,6 +1,6 @@
 <?php $footerimageurl = get_field('footer_image', 'options'); ?>
 
-<footer style="background: #000 url(<?php echo $footerimageurl['sizes']['large'] ?>) no-repeat center center; background-size: cover;"">
+<footer style="background: #1b1b1b url(<?php echo $footerimageurl['sizes']['large'] ?>) no-repeat center bottom; background-size: cover;">
     <section class="layout__footer">
         <div class="container">
             <div class="row justify-content-center justify-content-md-between align-items-center">

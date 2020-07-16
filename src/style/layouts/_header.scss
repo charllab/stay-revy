@@ -2,7 +2,22 @@
 // ++++++++++++++++++++++++++++++++++++++  Main Nav ++++++++++++++++++++++++++++++++++++++++++++++++
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+.home .main-nav {
+    position: absolute;
+    background-color: transparent;
+}
+
+a.link--no-focus {
+    &:focus {
+        outline: none;
+        background-color: transparent;
+    }
+}
+
+
 .main-nav {
+
+    background-color: $secondary;
 
     .nav__skinny-burger {
         width: 28px;

@@ -36,6 +36,9 @@ if (!function_exists('custom_after_setup_theme')) {
         remove_theme_support('custom-background');
         remove_theme_support('post-thumbnails');
 
+        add_image_size('gallery-image', 1440, 1080, true, ['center', 'center']);
+        add_image_size('extra-large', 1920, 1080, false);
+
         register_nav_menus([
             'primary' => 'Primary Menu',
             'secondary' => 'Footer Menu'

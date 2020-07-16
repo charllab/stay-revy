@@ -15,6 +15,16 @@ button {
 .btn__check-in--min-width {
     width: 100%;
 }
+.js-button-increment {
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.btn.js-button-fw {
+    font-weight: 300 !important;
+}
 
 @include media-breakpoint-up(xxl) {
 

@@ -102,27 +102,27 @@ $accom_query = new WP_Query($args);
 
 <?php get_template_part('includes/page', 'banner'); ?>
 
-<section class="section listing-page-pd">
+<section class="general-sect__padding">
 
     <div class="container">
-        <div class="row">
-            <div class="col-xl-4 col-xxl-3">
-                <div class="page-leftside listing-page-sidemenu">
+        <div class="row justify-content-between">
+            <div class="col-xl-4 pr-xl-1">
+                <div class="page-leftside listing-page-sidemenu p-1">
                     <div class="listing-page-sidemenu-content-maxwidth">
                         <form class="listing-page-sidemenu-form js-search-form">
-                            <div class="btn-group btn-group-toggle w-100 listing-page-toggle js-listing-page-toggle" data-toggle="buttons">
-                                <label class="btn btn-primary <?php echo($view == 'list' ? 'active' : ''); ?> px-0 w-50">
+                            <div class="btn-group btn-group-toggle w-100 listing-page-toggle js-listing-page-toggle mb-1" data-toggle="buttons">
+                                <label class="btn btn-primary <?php echo($view == 'list' ? 'active' : ''); ?> px-0 w-50 py-50">
                                     <input type="radio" name="v" id="listView" value="list" rel="js-view-list" <?php echo($view == 'list' ? 'checked' : ''); ?>>
                                     <i class="fas fa-list"></i> List
                                 </label>
-                                <label class="btn btn-primary <?php echo($view == 'map' ? 'active' : ''); ?> px-0 w-50">
+                                <label class="btn btn-primary <?php echo($view == 'map' ? 'active' : ''); ?> px-0 w-50 py-50">
                                     <input type="radio" name="v" id="mapView" value="map" rel="js-view-map" <?php echo($view == 'map' ? 'checked' : ''); ?>>
                                     <i class="fas fa-map"></i> Map
                                 </label>
                             </div>
 
-                            <h3 class="h5 clr-drkgreen">Accommodations</h3>
-                            <div class="listing-page-sidemenu-block">
+                            <p class="listing__filter-h listing__filter--h1">Accommodations</p>
+                            <div class="listing-page-sidemenu-block mb-150">
                                 <?php
                                 $cat_args = [
                                     'orderby' => 'name',
@@ -141,36 +141,36 @@ $accom_query = new WP_Query($args);
                                         $isChecked = in_array($category->term_taxonomy_id, $query['c']);
                                     }
                                     ?>
-                                    <div class="custom-control custom-checkbox">
+                                    <div class="custom-control custom-checkbox d-flex align-items-center">
                                         <input type="checkbox" <?php echo($isChecked ? 'checked' : ''); ?> name="c[]"
-                                               value="<?php echo $category->term_taxonomy_id ?>" class="custom-control-input"
+                                               value="<?php echo $category->term_taxonomy_id ?>" class="custom-control-input mb-0"
                                                id="cat-<?php echo $category->name; ?>">
-                                        <label class="custom-control-label"
+                                        <label class="custom-control-label mb-0"
                                                for="cat-<?php echo $category->name ?>"><?php echo $category->name ?></label>
                                     </div>
                                 <?php } ?>
                             </div><!-- listing-page-sidemenu-block -->
 
                             <div class="listing-page-sidemenu-block">
-                                <h4 class="h5 clr-drkgreen">Filters</h4>
+                                <p class="listing__filter-h listing__filter--h2 mb-150">Filters</p>
 
-                                <div class="increment-filters mb-3">
+                                <div class="increment-filters mb-150">
                                     <div class="d-flex align-items-center js-num-increment">
-                                        <label for="numberOfGuests">Guests</label>
+                                        <label for="numberOfGuests"class="listing-page-sidemenu__label">Guests</label>
                                         <div class="num-increment-wrap">
                                             <input class="form-control" readonly type="text" name="g" id="numberOfGuests"
                                                    value="<?php echo(isset($query['g']) && $query['g'] ? $query['g'] : '0+'); ?>">
                                         </div>
                                     </div><!-- flex -->
                                     <div class="d-flex align-items-center js-num-increment">
-                                        <label for="numberOfBedrooms">Bedrooms</label>
+                                        <label for="numberOfBedrooms"class="listing-page-sidemenu__label">Bedrooms</label>
                                         <div class="num-increment-wrap">
                                             <input class="form-control" readonly type="text" name="b" id="numberOfBedrooms"
                                                    value="<?php echo(isset($query['b']) && $query['b'] ? $query['b'] : '0+'); ?>">
                                         </div>
                                     </div><!-- flex -->
                                     <div class="d-flex align-items-center js-num-increment">
-                                        <label for="numberOfWashrooms">Washrooms</label>
+                                        <label for="numberOfWashrooms" class="listing-page-sidemenu__label">Washrooms</label>
                                         <div class="num-increment-wrap">
                                             <input class="form-control" readonly type="text" name="wr" id="numberOfWashrooms"
                                                    value="<?php echo(isset($query['wr']) && $query['wr'] ? $query['wr'] : '0+'); ?>">
@@ -192,10 +192,10 @@ $accom_query = new WP_Query($args);
 
                             </div><!-- listing-page-sidemenu-block -->
                             <div class="text-center">
-                                <button class="btn btn-primary mb-0 js-update-search d-block w-100" type="submit">
-                                    Update Search &nbsp;<i class="fas fa-search"></i>
+                                <button class="btn btn-primary js-update-search d-block w-100 mb-75" type="submit">
+                                    Update Search &nbsp;<i class="fas fa-search d-lg-none"></i>
                                 </button>
-                                <a href="<?php bloginfo('url'); ?>/vacation-rentals" class="btn btn-secondary mt-2 d-block w-100">
+                                <a href="<?php bloginfo('url'); ?>/vacation-rentals" class="btn btn-secondary d-block w-100 mb-0">
                                     Reset
                                 </a>
                             </div>
@@ -204,7 +204,7 @@ $accom_query = new WP_Query($args);
                 </div><!-- page-leftside -->
             </div>
 
-            <div class="col-xl-8 col-xxl-9">
+            <div class="col-xl-8">
                 <div class="page-rightside">
                     <?php get_template_part('includes/map'); ?>
 

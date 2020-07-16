@@ -15,7 +15,7 @@ if(get_field('frontdesk_property_id')) {
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="ffs clr-drkgreen script-font"><?php the_title(); ?></h1>
+                <h1 class="h2"><?php the_title(); ?></h1>
             </div><!-- col -->
         </div><!-- row -->
     </div><!-- container -->
@@ -56,7 +56,7 @@ if(get_field('frontdesk_property_id')) {
     </div><!-- container -->
 </section>
 
-<section class="accommodation-gallery mt-5">
+<section class="accommodation-gallery">
     <div class="container">
         <div class="row">
 
@@ -81,13 +81,13 @@ if(get_field('frontdesk_property_id')) {
     </div><!-- container -->
 </section>
 
-<section class="footer-ctablock text-center">
+<section class="footer-ctablock text-center general-sect__padding bg-dark">
     <div class="container">
-        <h3 class="script-font h1 mb-4">What Our Guests Have To Say</h3>
+        <h3 class="text-white h4 mb-3">What Our Guests Have To&nbsp;Say</h3>
 
         <div class="row justify-content-center">
             <div class="col-md-8 accommodation-guest-review-inner">
-                <div class="accommodation-guest-review-wrapper">
+                <div class="accommodation-guest-review-wrapper py-2 pt-lg-1 pb-lg-5">
                     <div class="owl-carousel owl-theme">
 
                         <?php if (have_rows('accommodation_review')): ?>
@@ -95,7 +95,7 @@ if(get_field('frontdesk_property_id')) {
                             <?php while (have_rows('accommodation_review')) : the_row(); ?>
 
                                 <div class="item">
-                                    <p class="mb-0"><?php echo the_sub_field('accommodation_review_burb'); ?></p>
+                                    <p class="text-white mb-0"><?php echo the_sub_field('accommodation_review_burb'); ?></p>
                                 </div>
 
                             <?php endwhile; ?>

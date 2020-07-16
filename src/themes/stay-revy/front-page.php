@@ -94,7 +94,7 @@
             </div>
         </div>
 
-        <div class="container-fluid">
+        <div class="container-fluid pb-md-4">
             <div class="row">
                 <?php $featuredpropertyimageurl = get_field('featured_property_image'); ?>
                 <div class="col-md-6" style="background: #666 url(<?php echo $featuredpropertyimageurl['sizes']['large'] ?>) no-repeat center center; background-size: cover;">
@@ -115,7 +115,7 @@
 
         <?php if (have_rows('activity_card')): ?>
 
-            <div class="container general-sect__padding">
+            <div class="container general-sect__pb">
                 <div class="row justify-content-center">
 
                     <?php while (have_rows('activity_card')) : the_row(); ?>

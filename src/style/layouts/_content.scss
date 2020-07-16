@@ -323,35 +323,92 @@ p:empty {
 
 }
 
+// ********* owl carousel ************* //
 
+// ----- Owl-carousel -----
 
+.owl-carousel {
+    margin-bottom: 0;
+}
 
+.owl-theme .owl-nav {
+    position: absolute;
+    top: 35%;
+    top: calc(50% - 25px);
+    color: white;
+    font-size: 60px;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
 
+    button {
+        min-width: auto;
+        outline: none;
+    }
+}
+
+$owl-btn: 60px;
+$owl-lgg: #c4dbd5;
+
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next {
+    width: $owl-btn;
+    height: $owl-btn;
+    border-radius: 0;
+    margin-top: 4rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    &:hover {
+        background-color: $owl-lgg;
+    }
+}
+
+.owl-dots {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2.75rem;
+
+    button {
+        margin-bottom: 0;
+        margin-top: $spacer;
+        outline: none;
+        min-width: auto;
+        min-width: auto;
+        width: auto;
+    }
+}
+
+$dot-size: 14px;
+
+.owl-carousel button.owl-dot {
+    width: $dot-size;
+    height: $dot-size;
+    border: 1px solid white;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+button.owl-dot.active {
+    background-color: white;
+}
 
 
 // ******** listings copy & paste ******** //
 
 .listing-page-sidemenu {
-    background-color: rgba(#d6e4e0, .75);
-    color: green;
-    padding: 1.5rem;
+    color: $primary;
     margin-bottom: 2rem;
     border-radius: 0;
-
-    @include media-breakpoint-up(lg) {
-        border-radius: .5rem;
-    }
+    border: 1px solid darken(#fafafa,5%);
 }
 
 .listing-page-toggle {
     margin-bottom: 2rem;
-}
-
-.listing-block-wrapper {
-    background-color: white;
-    box-shadow: $box-shadow;
-    margin-bottom: 2rem;
-    border-radius: .5rem;
 }
 
 .listing-block-img {
@@ -417,24 +474,9 @@ p:empty {
     }
 }
 
-.accommodation-gallery {
-    margin-bottom: 4rem;
-
-}
-
-.accommodation-guest-title {
-    @include media-breakpoint-up(md) {
-        margin-bottom: 3rem;
-    }
-}
 
 .accommodation-guest-review-wrapper {
     position: relative;
-    background-color: white;
-    padding-top: 3rem;
-    padding-bottom: 5rem;
-    box-shadow: $box-shadow;
-    border-radius: 1rem;
 }
 
 .accommodation-guest-review-inner {
@@ -464,7 +506,6 @@ p:empty {
     }
 
     .owl-item {
-        font-size: 120%;
 
         .item {
             width: 75%;

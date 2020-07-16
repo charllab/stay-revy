@@ -67,3 +67,8 @@ mark {
 .bg-white {
 	background-color: $white;
 }
+
+.badge {
+    text-transform: uppercase;
+    padding: $spacer*.25 $spacer*.75;
+}

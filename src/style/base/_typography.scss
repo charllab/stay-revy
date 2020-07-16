@@ -61,7 +61,7 @@ h4, .h4 {
 
 h5, .h5 {
     font-size: .8rem;
-    line-height: 1.2;
+    line-height: 1.85;
 }
 
 p {
@@ -88,6 +88,19 @@ p {
 
 .text-md {
     font-size: 90%;
+}
+
+.listing__filter-h {
+    font-family: $font-family-serif;
+    line-height: 1;
+}
+
+.listing__filter--h1 {
+    font-size: .9rem;
+}
+
+.listing__filter--h2 {
+    font-size: .85rem;
 }
 
 .list-unstyled li {
@@ -132,6 +145,14 @@ p {
     .lead-xl {
         font-size: 2rem;
         font-weight: 700;
+    }
+
+    .listing__filter--h1 {
+        font-size: .85rem;
+    }
+
+    .listing__filter--h1 {
+        font-size: .78rem;
     }
 
 }
