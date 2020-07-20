@@ -1,6 +1,6 @@
 <?php $image = get_field('accommodation_banner_image'); ?>
 
-<div class="listing-block-wrapper mb-lg-1 d-lg-flex">
+<div class="listing-block-wrapper mb-lg-1 d-xxl-flex">
     <div class="listing-block-img" style="background-image: url(<?php echo $image['sizes']['large']; ?>)"></div><!-- listing-block-img -->
 
     <div class="listing-block-content p-1 py-lg-2">
@@ -8,7 +8,11 @@
         <h2 class="h3 clr-secondary"><?php the_title(); ?></h2>
 
         <div class="listing-block-copy">
-            <p><?php the_field('accommodation_excerpt'); ?></p>
+
+            <p>
+
+                <?php echo wp_trim_words( get_field('accommodation_summary' ), 30 ); ?>
+            </p>
 
             <?php $category = get_the_category(); ?>
 

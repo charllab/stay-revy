@@ -106,105 +106,114 @@ $accom_query = new WP_Query($args);
 
     <div class="container">
         <div class="row justify-content-between">
-            <div class="col-xl-4 pr-xl-1">
-                <div class="page-leftside listing-page-sidemenu p-1">
-                    <div class="listing-page-sidemenu-content-maxwidth">
-                        <form class="listing-page-sidemenu-form js-search-form">
-                            <div class="btn-group btn-group-toggle w-100 listing-page-toggle js-listing-page-toggle mb-1" data-toggle="buttons">
-                                <label class="btn btn-primary <?php echo($view == 'list' ? 'active' : ''); ?> px-0 w-50 py-50">
-                                    <input type="radio" name="v" id="listView" value="list" rel="js-view-list" <?php echo($view == 'list' ? 'checked' : ''); ?>>
-                                    <i class="fas fa-list"></i> List
-                                </label>
-                                <label class="btn btn-primary <?php echo($view == 'map' ? 'active' : ''); ?> px-0 w-50 py-50">
-                                    <input type="radio" name="v" id="mapView" value="map" rel="js-view-map" <?php echo($view == 'map' ? 'checked' : ''); ?>>
-                                    <i class="fas fa-map"></i> Map
-                                </label>
-                            </div>
+            <div class="col-lg-4 col-xxl-3">
+                <div class="page-leftside listing-page-sidemenu py-1">
 
-                            <p class="listing__filter-h listing__filter--h1">Accommodations</p>
-                            <div class="listing-page-sidemenu-block mb-150">
-                                <?php
-                                $cat_args = [
-                                    'orderby' => 'name',
-                                    'order' => 'ASC'
-                                ];
+                    <div class="px-1">
+                        <a class="d-flex listing__filter-h listing__filter--h1 text-decoration--none w-100 d-lg-none"
+                           data-toggle="collapse" href="#hideShowFilters" role="button"
+                           aria-expanded="false" aria-controls="hideShowFilters">Search Filters <i
+                                class="fas fa-chevron-down ml-auto"></i></a>
+                        <h5 class="d-none d-lg-block">Filtering</h5>
+                    </div>
 
-                                $categories = get_categories($cat_args);
-                                $rowCount = 0;
+                    <div class="collapse d-lg-block" id="hideShowFilters">
 
-                                foreach ($categories as $category) { ?>
+                            <form class="listing-page-sidemenu-form js-search-form px-1">
 
-                                    <?php
-                                    $isChecked = true;
+                                <div class="listing-page-sidemenu-block mb-150">
 
-                                    if (!$useDefaultCats) {
-                                        $isChecked = in_array($category->term_taxonomy_id, $query['c']);
-                                    }
-                                    ?>
-                                    <div class="custom-control custom-checkbox d-flex align-items-center">
-                                        <input type="checkbox" <?php echo($isChecked ? 'checked' : ''); ?> name="c[]"
-                                               value="<?php echo $category->term_taxonomy_id ?>" class="custom-control-input mb-0"
-                                               id="cat-<?php echo $category->name; ?>">
-                                        <label class="custom-control-label mb-0"
-                                               for="cat-<?php echo $category->name ?>"><?php echo $category->name ?></label>
+                                </div><!-- listing-page-sidemenu-block -->
+
+                                <div class="listing-page-sidemenu-block">
+
+                                    <div class="increment-filters">
+                                        <div class="d-flex align-items-center js-num-increment">
+                                            <label for="numberOfGuests"
+                                                   class="listing-page-sidemenu__label">Guests</label>
+                                            <div class="num-increment-wrap">
+                                                <input class="form-control" readonly type="text" name="g"
+                                                       id="numberOfGuests"
+                                                       value="<?php echo(isset($query['g']) && $query['g'] ? $query['g'] : '0+'); ?>">
+                                            </div>
+                                        </div><!-- flex -->
+                                        <div class="d-flex align-items-center js-num-increment">
+                                            <label for="numberOfBedrooms"
+                                                   class="listing-page-sidemenu__label">Bedrooms</label>
+                                            <div class="num-increment-wrap">
+                                                <input class="form-control" readonly type="text" name="b"
+                                                       id="numberOfBedrooms"
+                                                       value="<?php echo(isset($query['b']) && $query['b'] ? $query['b'] : '0+'); ?>">
+                                            </div>
+                                        </div><!-- flex -->
+                                        <div class="d-flex align-items-center js-num-increment">
+                                            <label for="numberOfWashrooms" class="listing-page-sidemenu__label">Washrooms</label>
+                                            <div class="num-increment-wrap">
+                                                <input class="form-control" readonly type="text" name="wr"
+                                                       id="numberOfWashrooms"
+                                                       value="<?php echo(isset($query['wr']) && $query['wr'] ? $query['wr'] : '0+'); ?>">
+                                            </div>
+                                        </div><!-- flex -->
                                     </div>
-                                <?php } ?>
-                            </div><!-- listing-page-sidemenu-block -->
 
-                            <div class="listing-page-sidemenu-block">
-                                <p class="listing__filter-h listing__filter--h2 mb-150">Filters</p>
+                                    <div class="custom-control custom-checkbox mb-250 mb-lg-0">
+                                        <?php
+                                        $cat_args = [
+                                            'orderby' => 'name',
+                                            'order' => 'ASC'
+                                        ];
 
-                                <div class="increment-filters mb-150">
-                                    <div class="d-flex align-items-center js-num-increment">
-                                        <label for="numberOfGuests"class="listing-page-sidemenu__label">Guests</label>
-                                        <div class="num-increment-wrap">
-                                            <input class="form-control" readonly type="text" name="g" id="numberOfGuests"
-                                                   value="<?php echo(isset($query['g']) && $query['g'] ? $query['g'] : '0+'); ?>">
-                                        </div>
-                                    </div><!-- flex -->
-                                    <div class="d-flex align-items-center js-num-increment">
-                                        <label for="numberOfBedrooms"class="listing-page-sidemenu__label">Bedrooms</label>
-                                        <div class="num-increment-wrap">
-                                            <input class="form-control" readonly type="text" name="b" id="numberOfBedrooms"
-                                                   value="<?php echo(isset($query['b']) && $query['b'] ? $query['b'] : '0+'); ?>">
-                                        </div>
-                                    </div><!-- flex -->
-                                    <div class="d-flex align-items-center js-num-increment">
-                                        <label for="numberOfWashrooms" class="listing-page-sidemenu__label">Washrooms</label>
-                                        <div class="num-increment-wrap">
-                                            <input class="form-control" readonly type="text" name="wr" id="numberOfWashrooms"
-                                                   value="<?php echo(isset($query['wr']) && $query['wr'] ? $query['wr'] : '0+'); ?>">
-                                        </div>
-                                    </div><!-- flex -->
+                                        $categories = get_categories($cat_args);
+                                        $rowCount = 0;
+
+                                        foreach ($categories as $category) { ?>
+
+                                            <?php
+                                            $isChecked = true;
+
+                                            if (!$useDefaultCats) {
+                                                $isChecked = in_array($category->term_taxonomy_id, $query['c']);
+                                            }
+                                            ?>
+                                            <input type="checkbox" <?php echo($isChecked ? 'checked' : ''); ?>
+                                                   name="c[]"
+                                                   value="<?php echo $category->term_taxonomy_id ?>"
+                                                   class="custom-control-input"
+                                                   id="cat-<?php echo $category->name; ?>">
+                                            <label class="custom-control-label mb-lg-0"
+                                                   for="cat-<?php echo $category->name ?>"><?php echo $category->name ?></label>
+
+                                        <?php } ?>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-1">
+                                        <input
+                                            type="checkbox" <?php echo(isset($query['pets']) && $query['pets'] == 1 ? 'checked' : ''); ?>
+                                            name="pets" value="1" class="custom-control-input" id="isPetFriendly">
+                                        <label class="custom-control-label" for="isPetFriendly">Pet Friendly</label>
+                                    </div>
+
+
+                                </div><!-- listing-page-sidemenu-block -->
+                                <div class="text-center">
+                                    <button class="btn btn-primary js-update-search d-block w-100 mb-75 px-1"
+                                            type="submit">
+                                        Update Search &nbsp;<i class="fas fa-search d-lg-none"></i>
+                                    </button>
+                                    <button href="<?php bloginfo('url'); ?>/vacation-rentals"
+                                            class="btn btn-secondary d-block w-100 mb-0 px-1">
+                                        Reset
+                                    </button>
                                 </div>
 
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" <?php echo(isset($query['pets']) && $query['pets'] == 1 ? 'checked' : ''); ?>
-                                           name="pets" value="1" class="custom-control-input" id="isPetFriendly">
-                                    <label class="custom-control-label" for="isPetFriendly">Pet Friendly</label>
-                                </div>
+                            </form>
 
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" <?php echo(isset($query['hottub']) && $query['hottub'] == 1 ? 'checked' : ''); ?>
-                                           name="hottub" value="1" class="custom-control-input" id="privateHotTub">
-                                    <label class="custom-control-label" for="privateHotTub">Private Hot Tub</label>
-                                </div>
+                    </div><!-- collapse -->
 
-                            </div><!-- listing-page-sidemenu-block -->
-                            <div class="text-center">
-                                <button class="btn btn-primary js-update-search d-block w-100 mb-75" type="submit">
-                                    Update Search &nbsp;<i class="fas fa-search d-lg-none"></i>
-                                </button>
-                                <a href="<?php bloginfo('url'); ?>/vacation-rentals" class="btn btn-secondary d-block w-100 mb-0">
-                                    Reset
-                                </a>
-                            </div>
-                        </form>
-                    </div><!-- listing-page-sidemenu-content-maxwidth -->
+
                 </div><!-- page-leftside -->
             </div>
 
-            <div class="col-xl-8">
+            <div class="col-lg-8 col-xxl-9">
                 <div class="page-rightside">
                     <?php get_template_part('includes/map'); ?>
 
@@ -220,7 +229,8 @@ $accom_query = new WP_Query($args);
 
                             <div class="alert alert-primary" role="alert">
                                 There were no properties found using the current filter. <a
-                                    href="<?php bloginfo('url'); ?>/vacation-rentals" class="alert-link">Click here</a> to reset and view
+                                    href="<?php bloginfo('url'); ?>/vacation-rentals" class="alert-link">Click here</a>
+                                to reset and view
                                 all.
                             </div>
 

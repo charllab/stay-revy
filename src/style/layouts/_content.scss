@@ -420,11 +420,11 @@ button.owl-dot.active {
     border-bottom-left-radius: .5rem;
     border: .5rem solid $white;
 
-    @include media-breakpoint-up(lg) {
-        width: 375px;
+    @include media-breakpoint-up(xxl) {
+        width: 458px;
     }
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(xl) {
         height: 300px;
     }
 }
@@ -453,6 +453,15 @@ button.owl-dot.active {
 }
 
 // accommodation page specific
+
+.listing__address-block {
+    border-left: 2px solid $soft;
+}
+
+.listing-icons--min-width {
+    min-width: $spacer;
+}
+
 .accommodation-titleblock {
     padding-top: 3.5rem;
     padding-bottom: .5rem;
@@ -508,9 +517,9 @@ button.owl-dot.active {
     .owl-item {
 
         .item {
-            width: 75%;
+            width: 96%;
             margin: auto;
-            text-align: center;
+            line-height: 1.5;
         }
     }
 
@@ -518,4 +527,19 @@ button.owl-dot.active {
         display: flex;
         align-items: center;
     }
+}
+
+@include media-breakpoint-up(md) {
+
+    .accommodation-guest-review-inner {
+        .owl-item {
+
+            .item {
+                width: 75%;
+                margin: auto;
+                line-height: 1.5;
+            }
+        }
+    }
+
 }

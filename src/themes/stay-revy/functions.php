@@ -33,6 +33,9 @@ if (!function_exists('custom_after_setup_theme')) {
 
     function custom_after_setup_theme()
     {
+
+        add_image_size('page-banner', 1440, 566, true, ['center', 'center']);
+
         remove_theme_support('custom-background');
         remove_theme_support('post-thumbnails');
 
