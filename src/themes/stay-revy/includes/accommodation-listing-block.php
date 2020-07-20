@@ -11,7 +11,7 @@
 
             <p>
 
-                <?php echo wp_trim_words( get_field('accommodation_summary' ), 30 ); ?>
+                <?php echo wp_trim_words( get_field('accommodation_summary' ), 18 ); ?>
             </p>
 
             <?php $category = get_the_category(); ?>
