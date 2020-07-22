@@ -100,24 +100,26 @@ $args = array_merge($args, [
 $accom_query = new WP_Query($args);
 ?>
 
-<?php get_template_part('includes/page', 'banner'); ?>
+<main>
 
-<section class="general-sect__padding">
+    <?php get_template_part('includes/page', 'banner'); ?>
 
-    <div class="container">
-        <div class="row justify-content-between">
-            <div class="col-lg-4 col-xxl-3">
-                <div class="page-leftside listing-page-sidemenu py-1">
+    <section class="general-sect__padding">
 
-                    <div class="px-1">
-                        <a class="d-flex listing__filter-h listing__filter--h1 text-decoration--none w-100 d-lg-none"
-                           data-toggle="collapse" href="#hideShowFilters" role="button"
-                           aria-expanded="false" aria-controls="hideShowFilters">Search Filters <i
-                                class="fas fa-chevron-down ml-auto"></i></a>
-                        <h5 class="d-none d-lg-block">Filtering</h5>
-                    </div>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-4 col-xxl-3">
+                    <div class="page-leftside listing-page-sidemenu py-1">
 
-                    <div class="collapse d-lg-block" id="hideShowFilters">
+                        <div class="px-1">
+                            <a class="d-flex listing__filter-h listing__filter--h1 text-decoration--none w-100 d-lg-none"
+                               data-toggle="collapse" href="#hideShowFilters" role="button"
+                               aria-expanded="false" aria-controls="hideShowFilters">Search Filters <i
+                                    class="fas fa-chevron-down ml-auto"></i></a>
+                            <h5 class="d-none d-lg-block">Filtering</h5>
+                        </div>
+
+                        <div class="collapse d-lg-block" id="hideShowFilters">
 
                             <form class="listing-page-sidemenu-form js-search-form px-1">
 
@@ -207,40 +209,43 @@ $accom_query = new WP_Query($args);
 
                             </form>
 
-                    </div><!-- collapse -->
+                        </div><!-- collapse -->
 
 
-                </div><!-- page-leftside -->
-            </div>
+                    </div><!-- page-leftside -->
+                </div>
 
-            <div class="col-lg-8 col-xxl-9">
-                <div class="page-rightside">
-                    <?php get_template_part('includes/map'); ?>
+                <div class="col-lg-8 col-xxl-9">
+                    <div class="page-rightside">
+                        <?php get_template_part('includes/map'); ?>
 
-                    <div class="js-view-list" <?php echo($view == 'map' ? 'style="display: none;"' : ''); ?>>
-                        <?php
-                        if ($accom_query->have_posts()) {
-                            while ($accom_query->have_posts()) {
-                                $accom_query->the_post();
-                                get_template_part('includes/accommodation-listing-block');
-                            }
-                            wp_reset_postdata();
-                        } else { ?>
-
-                            <div class="alert alert-primary" role="alert">
-                                There were no properties found using the current filter. <a
-                                    href="<?php bloginfo('url'); ?>/vacation-rentals" class="alert-link">Click here</a>
-                                to reset and view
-                                all.
-                            </div>
-
+                        <div class="js-view-list" <?php echo($view == 'map' ? 'style="display: none;"' : ''); ?>>
                             <?php
-                        }
-                        ?>
-                    </div>
-                </div><!-- page-rightside -->
+                            if ($accom_query->have_posts()) {
+                                while ($accom_query->have_posts()) {
+                                    $accom_query->the_post();
+                                    get_template_part('includes/accommodation-listing-block');
+                                }
+                                wp_reset_postdata();
+                            } else { ?>
+
+                                <div class="alert alert-primary" role="alert">
+                                    There were no properties found using the current filter. <a
+                                        href="<?php bloginfo('url'); ?>/vacation-rentals" class="alert-link">Click
+                                        here</a>
+                                    to reset and view
+                                    all.
+                                </div>
+
+                                <?php
+                            }
+                            ?>
+                        </div>
+                    </div><!-- page-rightside -->
+                </div>
             </div>
         </div>
-    </div>
 
-</section>
+    </section>
+
+</main>

@@ -8,11 +8,10 @@
 
     <?php else : ?>
 
-        <?php get_template_part('loop-templates/content', 'page'); ?>
+        <?php get_template_part('includes/content', 'page'); ?>
 
     <?php endif; ?>
 
 <?php endwhile; // end of the loop. ?>
-
 
 <?php get_footer(); ?>

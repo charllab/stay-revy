@@ -1,0 +1,49 @@
+
+.ghostkit-button {
+    @extend .btn;
+    @extend .btn-primary;
+    margin-bottom: $spacer;
+}
+
+.ghostkit-ping-pong__content {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .ghostkit-col-content {
+        border: 1px solid red;
+        margin-left: 0;
+        @extend .layout--pingpong--maxwidth;
+    }
+
+    .ghostkit-button-wrapper {
+        margin-bottom: 0;
+    }
+
+}
+
+.order-1.ghostkit-ping-pong__content {
+    .ghostkit-col-content {
+        margin-left: auto;
+    }
+}
+
+
+.ghostkit-col-with-bg {
+        max-width: none;
+        padding: 0;
+        min-height: 364px;
+}
+
+@include media-breakpoint-up(md) {
+
+
+    .alignfull.ghostkit-grid.ghostkit-grid-gap-no {
+        padding-bottom: $spacer*4;
+    }
+
+    .ghostkit-col-with-bg {
+        min-height: 576px;
+    }
+
+}
+

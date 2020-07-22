@@ -543,3 +543,14 @@ button.owl-dot.active {
     }
 
 }
+
+//******* Gutenberg *********//
+
+.has-medium-font-size {
+    @extend .lead;
+    font-weight: normal;
+
+    strong {
+        font-weight: 700;
+    }
+}

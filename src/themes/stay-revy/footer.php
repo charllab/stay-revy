@@ -31,10 +31,17 @@
     <section class="bg-secondary text-white py-125">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 text-center text-md-left">
+                <div class="col-lg-4 text-center text-md-left">
                     <p class="mb-md-0 small">&copy; <?php echo Date('Y') . ' ' . get_bloginfo('name'); ?></p>
                 </div>
-                <div class="col-md-8 text-center text-md-right">
+                <div class="col-lg-4 text-center">
+                    <p class="mb-lg-0">
+                        <a href="<?php echo esc_url(home_url('/terms-and-conditions')); ?>"
+                           class="text-white">Terms & Conditions</a> | <a
+                            href="<?php echo esc_url(home_url('/privacy-policy')); ?>" class="text-white">Privacy&nbsp;Policy</a>
+                    </p>
+                </div>
+                <div class="col-md-4 text-center text-md-right">
                     <p class="mb-0 small">Designed, Developed and Hosted by <a href="https://sproing.ca" target="_blank" class="text-white">Sproing&nbsp;Creative</a>
                     </p>
                 </div>

@@ -1,7 +1,8 @@
 <?php $image = get_field('accommodation_banner_image'); ?>
 
 <div class="listing-block-wrapper mb-lg-1 d-xxl-flex">
-    <div class="listing-block-img" style="background-image: url(<?php echo $image['sizes']['large']; ?>)"></div><!-- listing-block-img -->
+    <div class="listing-block-img" style="background-image: url(<?php echo $image['sizes']['large']; ?>)"></div>
+    <!-- listing-block-img -->
 
     <div class="listing-block-content p-1 py-lg-2">
 
@@ -11,7 +12,7 @@
 
             <p>
 
-                <?php echo wp_trim_words( get_field('accommodation_summary' ), 18 ); ?>
+                <?php echo wp_trim_words(get_field('accommodation_summary'), 18); ?>
             </p>
 
             <?php $category = get_the_category(); ?>
@@ -19,11 +20,15 @@
             <span class="badge badge-info mb-1"><?php echo $category[0]->name; ?></span>
 
             <ul class="listing-icons list-unstyled d-flex flex-wrap mb-1">
-                <li class="mb-35 mb-lg-250"><i class="fas fa-bed"></i> <?php the_field('number_of_bedrooms'); ?> Bedrooms</li>
-                <li class="mb-35 mb-lg-250"><i class="fas fa-bath"></i> <?php the_field('number_of_bathrooms'); ?> Baths</li>
-                <li class="mb-35 mb-lg-250"><i class="fas fa-user-friends"></i> <?php the_field('max_people'); ?> People</li>
-                <li class="mb-35 mb-lg-250"><i class="fas fa-crop-alt"></i> <?php the_field('square_feet'); ?> SQ FT</li>
-                <?php if( get_field('pet_friendly') ): ?>
+                <li class="mb-35 mb-lg-250"><i class="fas fa-bed"></i> <?php the_field('number_of_bedrooms'); ?>Bedrooms
+                </li>
+                <li class="mb-35 mb-lg-250"><i class="fas fa-bath"></i> <?php the_field('number_of_bathrooms'); ?> Baths
+                </li>
+                <li class="mb-35 mb-lg-250"><i class="fas fa-user-friends"></i> <?php the_field('max_people'); ?> People
+                </li>
+                <li class="mb-35 mb-lg-250"><i class="fas fa-crop-alt"></i> <?php the_field('square_feet'); ?> SQ FT
+                </li>
+                <?php if (get_field('pet_friendly')): ?>
                     <li class="mb-35 mb-lg-250"><i class="fas fa-paw"></i> Pet Friendly</li>
                 <?php endif; ?>
 
