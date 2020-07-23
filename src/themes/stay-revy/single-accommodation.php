@@ -122,7 +122,7 @@ if (get_field('frontdesk_property_id')) {
             <div class="row justify-content-center">
                 <div class="col-lg-8 accommodation-guest-review-inner">
                     <div class="accommodation-guest-review-wrapper py-2 pt-lg-1 pb-lg-5">
-                        <div class="owl-carousel owl-theme">
+                        <div class="owl-carousel owl-theme" id="testimonial-slide">
 
                             <?php if (have_rows('accommodation_review')): ?>
 

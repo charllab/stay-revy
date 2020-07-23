@@ -1,5 +1,12 @@
 jQuery(function () {
 
+    // BIg Slide
+    jQuery('.menu-link').bigSlide({
+        side: 'right',
+        menuWidth: '16rem',
+        easyClose: true
+    });
+
     // Lightbox gallery
     jQuery('.js-gallery').magnificPopup({
         delegate: 'a',
@@ -10,7 +17,7 @@ jQuery(function () {
     });
 
     // owl carousel
-    jQuery('.owl-carousel').owlCarousel({
+    jQuery('#testimonial-slide').owlCarousel({
         loop: true,
         margin: 0,
         autoplay: true,
@@ -22,7 +29,7 @@ jQuery(function () {
 
     // Hero Carousel
     var owlhero = jQuery('#hero-slide').owlCarousel({
-        loop: true,
+        loop: false,
         margin: 0,
         responsiveClass: true,
         dots: true,

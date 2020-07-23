@@ -15,18 +15,19 @@
                     </div>
                 </div>
                 <div class="col-3 text-right">
-                    <button class="navbar-toggler ml-auto my-0" type="button" data-toggle="collapse" data-target=".main-navigation" aria-expanded="false" aria-label="Toggle navigation">
+
+                    <button class="navbar-toggler ml-auto my-0 menu-link" type="button" data-toggle="collapse">
                         <img src="<?php bloginfo('template_url'); ?>/images/skinny-burger.svg"
                              alt="<?php bloginfo('name'); ?> - menu" class="nav__skinny-burger py-250">
                     </button>
+
                 </div>
             </div>
 
         </div>
     </nav>
 
-    <div class="main-navigation collapse navbar-collapse bg-warning">
-
+    <nav id="menu" class="panel" role="navigation">
         <?php wp_nav_menu([
             'theme_location' => 'primary',
             'container_class' => 'container main-navigation--padding',
@@ -36,20 +37,6 @@
             'menu_id' => 'mobile-menu',
             'walker' => new understrap_WP_Bootstrap_Navwalker(),
         ]); ?>
-
-        <div class="container">
-            <a class="btn btn-link text-white px-0" href="tel:<?php echo strip_tel(get_field('phone_number', 'options')); ?>"><?php the_field('phone_number', 'options'); ?></a>
-
-            <div class="social-links">
-                <?php while( have_rows('social_links', 'options') ): the_row(); ?>
-                    <a class="social-link btn btn-link text-white px-0 mr-2" target="_blank" href="<?php the_sub_field('url'); ?>">
-                        <i class="<?php the_sub_field('icon_class'); ?> fa-2x">
-                            <span class="sr-only"><?php the_sub_field('label'); ?></span>
-                        </i>
-                    </a>
-                <?php endwhile; ?>
-            </div>
-        </div>
-    </div>
+    </nav>
 
 </header>

@@ -17,4 +17,6 @@
 
 <body <?php body_class(); ?>>
 
+<div class="push">
+
     <?php get_template_part('partials/header/hero-nav-overlay'); ?>
