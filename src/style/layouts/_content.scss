@@ -389,8 +389,11 @@ $dot-size: 14px;
     width: $dot-size;
     height: $dot-size;
     border: 1px solid white;
-    margin-left: 2px;
-    margin-right: 2px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 1px;
+    -ms-transform: rotate(45deg); /* IE 9 */
+    transform: rotate(45deg);
 }
 
 button.owl-dot.active {

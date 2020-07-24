@@ -168,3 +168,9 @@ p {
     -moz-hyphens: auto;
     hyphens: auto;
 }
+
+.lead-paragraph__last-p--mb0 {
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+}

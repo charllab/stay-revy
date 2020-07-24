@@ -6,8 +6,8 @@
  * @link https://github.com/jonsuh/hamburgers
  */
 .hamburger {
-    padding: 15px 15px;
-    display: inline-block;
+    padding: 15px 8px;
+    display: flex;
     cursor: pointer;
     transition-property: opacity, filter;
     transition-duration: 300ms;
@@ -704,3 +704,15 @@
 .hamburger--vortex-r.active .hamburger-inner::after {
     bottom: 0;
     transform: rotate(-90deg); }
+
+
+.hamburger {
+
+    &:active,
+    &:active,
+    &:focus {
+        border-radius: 4px;
+        outline: none;
+        background-color: #414141;
+    }
+}

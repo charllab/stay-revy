@@ -10,6 +10,7 @@
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
     <link rel="stylesheet" href="https://use.typekit.net/nuv1mhu.css">
+    <script src="https://kit.fontawesome.com/385662c85c.js" crossorigin="anonymous" SameSite="none Secure"></script>
 
     <?php wp_head(); ?>
 </head>

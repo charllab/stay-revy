@@ -2,15 +2,17 @@
 
     <?php get_template_part('includes/title', 'banner'); ?>
 
-            <div class="container general-sect__padding">
+    <?php get_template_part('includes/page', 'lead'); ?>
 
-                <div class="row">
-                    <div class="col-12">
+    <div class="container general-sect__padding">
 
-                        <?php the_content(); ?>
+        <div class="row">
+            <div class="col-12">
 
-                    </div><!-- col -->
-                </div><!-- row -->
-            </div><!-- container -->
+                <?php the_content(); ?>
+
+            </div><!-- col -->
+        </div><!-- row -->
+    </div><!-- container -->
 
 </main>

@@ -1,7 +1,7 @@
 <header id="header" class="main-nav w-100 z-index-lvl-1">
 
     <nav class="navbar">
-        <div class="container px-50">
+        <div class="container pl-50 pr-250">
 
             <div class="row no-gutters w-100 justify-content-end align-items-center">
                 <div class="col-6">
@@ -14,7 +14,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-3 text-right" id="meClick">
+                <div class="col-3 text-right">
 
                     <button class="hamburger hamburger--elastic ml-auto my-0 menu-link" type="button">
                       <span class="hamburger-box">

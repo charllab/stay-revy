@@ -43,16 +43,19 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-10">
 
-                            <form method="post" class="check-in__form text-white p-1 position-relative" id="checkInForm">
+                            <form method="post" class="check-in__form text-white p-1 position-relative"
+                                  id="checkInForm">
                                 <div class="block__tint-overlay position-absolute"></div>
                                 <div class="row align-items-end position-relative z-index-lvl-1">
                                     <div class="col-12 col-md-4 datePickW check-in__form-group">
-                                        <label class="text-uppercase check-in__form-label" for="checkInAndOut">Check in - check out</label>
+                                        <label class="text-uppercase check-in__form-label" for="checkInAndOut">Check in
+                                            - check out</label>
                                         <input type="text" class="form-control text-center" id="checkInAndOut"
                                                placeholder="Please choose…" value="" required>
                                     </div>
                                     <div class="col-12 col-md check-in__form-group">
-                                        <label class="text-uppercase check-in__form-label" for="numberOfAdults">Adults</label>
+                                        <label class="text-uppercase check-in__form-label"
+                                               for="numberOfAdults">Adults</label>
                                         <select class="custom-select" name="adults" id="numberOfAdults">
                                             <option value="1" selected>1</option>
                                             <option value="2">2</option>
@@ -83,35 +86,28 @@
 
         </div><!-- alignfull container -->
 
-        <div class="container general-sect__padding">
-            <div class="row justify-content-center">
-                <div class="col-11 col-lg-6 text-center">
-                    <p class="lead-xl mb-0">
-                        Amazing accommodations in Revelstoke.<br>
-                        Welcome to your home away from home.
-                    </p>
-                </div>
-            </div>
-        </div>
+        <?php get_template_part('includes/page', 'lead'); ?>
 
-        <div class="container-fluid pb-md-4">
+        <div class="container-fluid pt-3 pb-md-4">
             <div class="row">
                 <?php $featuredpropertyimageurl = get_field('featured_property_image'); ?>
-                <div class="col-md-6" style="background: #666 url(<?php echo $featuredpropertyimageurl['sizes']['large'] ?>) no-repeat center center; background-size: cover;">
-                    <img src="<?php echo $featuredpropertyimageurl['sizes']['large'] ?>" alt=" " class="d-md-none img-fluid">
+                <div class="col-md-6"
+                     style="background: #666 url(<?php echo $featuredpropertyimageurl['sizes']['large'] ?>) no-repeat center center; background-size: cover;">
+                    <img src="<?php echo $featuredpropertyimageurl['sizes']['large'] ?>" alt=" "
+                         class="d-md-none img-fluid">
                 </div>
                 <div class="col-md-6 layout__pingpong--py px-xs-2 px-md-150 px-lg-25">
                     <div class="layout--pingpong--maxwidth">
-                        <h2><?php the_field('featured_property_title')?></h2>
-                        <?php the_field('featured_property_blurb')?>
-                        <?php if(get_field('featured_property_button_link')): ?>
-                            <a href="<?php the_field('featured_property_button_link')?>" class="btn btn-primary mb-0"><?php the_field('featured_property_button_text')?></a>
+                        <h2><?php the_field('featured_property_title') ?></h2>
+                        <?php the_field('featured_property_blurb') ?>
+                        <?php if (get_field('featured_property_button_link')): ?>
+                            <a href="<?php the_field('featured_property_button_link') ?>"
+                               class="btn btn-primary mb-0"><?php the_field('featured_property_button_text') ?></a>
                         <?php endif; ?>
                     </div>
                 </div>
             </div>
         </div>
-
 
         <?php if (have_rows('activity_card')): ?>
 
@@ -150,7 +146,8 @@
                 <div class="row justify-content-center justify-content-xl-start">
                     <div class="col-11 col-xl-6 position-relative">
                         <div class="block__tint-overlay position-absolute"></div>
-                        <div class="layout--pingpong--maxwidth ml-auto px-50 px-sm-2 px-md-4 pl-lg-3 pl-xxxl-0 pr-lg-4 py-2 py-lg-3 position-relative z-index-lvl-1">
+                        <div
+                            class="layout--pingpong--maxwidth ml-auto px-50 px-sm-2 px-md-4 pl-lg-3 pl-xxxl-0 pr-lg-4 py-2 py-lg-3 position-relative z-index-lvl-1">
                             <h2 class="text-white hyphens--auto">HOMEOWNER?</h2>
                             <p class="lead text-white mb-0">Stay Revy is a property management company, offering
                                 exceptional service that will have your guests returning

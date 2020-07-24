@@ -22,7 +22,7 @@
                     <p class="text-white mb-2">
                         <i class="fas fa-map-marker-alt align-top pt-250 mr-35"></i> <span class="d-inline-block"> <strong>Address</strong>: <?php echo the_field('postal_address', 'options')?></span>
                     </p>
-                    <a href="<?php echo esc_url(home_url('/contact-stay-revy')); ?>" class="btn btn-light mb-0">Contact Us</a>
+                    <a href="<?php echo esc_url(home_url('/contact')); ?>" class="btn btn-light mb-0">Contact Us</a>
                 </div>
             </div>
         </div>
