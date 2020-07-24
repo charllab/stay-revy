@@ -176,3 +176,13 @@ a.link--no-focus {
 .push {
     position: relative;
 }
+
+/*prevent body from scrolling */
+.no-scroll {
+    overflow: hidden;
+}
+
+/* allow the menu to scroll */
+.panel {
+    overflow-x: scroll;
+}

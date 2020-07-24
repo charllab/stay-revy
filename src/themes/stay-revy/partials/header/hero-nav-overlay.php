@@ -14,11 +14,12 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-3 text-right">
+                <div class="col-3 text-right" id="meClick">
 
-                    <button class="navbar-toggler ml-auto my-0 menu-link" type="button" data-toggle="collapse">
-                        <img src="<?php bloginfo('template_url'); ?>/images/skinny-burger.svg"
-                             alt="<?php bloginfo('name'); ?> - menu" class="nav__skinny-burger py-250">
+                    <button class="hamburger hamburger--elastic ml-auto my-0 menu-link" type="button">
+                      <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                      </span>
                     </button>
 
                 </div>

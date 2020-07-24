@@ -1,10 +1,16 @@
 jQuery(function () {
 
-    // BIg Slide
-    jQuery('.menu-link').bigSlide({
+    // BIG Slide
+    var menuLink = jQuery('.menu-link').bigSlide({
         side: 'right',
         menuWidth: '16rem',
-        easyClose: true
+        easyClose: true,
+        afterOpen: function() {
+            jQuery( 'body' ).toggleClass('no-scroll');
+        },
+        afterClose: function() {
+            jQuery( 'body' ).toggleClass('no-scroll');
+        }
     });
 
     // Lightbox gallery
