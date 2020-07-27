@@ -141,18 +141,16 @@
 
         <?php endif; ?>
 
-        <section class="bg-info py-2 py-lg-3">
+        <?php $frontpagectaimageurl = get_field('frontpagecta_image'); ?>
+        <section class="py-2 py-lg-3" style="background: #666 url(<?php echo $frontpagectaimageurl['sizes']['large'] ?>) no-repeat center center; background-size: cover;">
             <div class="container-fluid">
                 <div class="row justify-content-center justify-content-xl-start">
                     <div class="col-11 col-xl-6 position-relative">
                         <div class="block__tint-overlay position-absolute"></div>
                         <div
                             class="layout--pingpong--maxwidth ml-auto px-50 px-sm-2 px-md-4 pl-lg-3 pl-xxxl-0 pr-lg-4 py-2 py-lg-3 position-relative z-index-lvl-1">
-                            <h2 class="text-white hyphens--auto">HOMEOWNER?</h2>
-                            <p class="lead text-white mb-0">Stay Revy is a property management company, offering
-                                exceptional service that will have your guests returning
-                                year after year. Learn more how our personal approach
-                                takes care of all your home rental needs.</p>
+                            <h2 class="text-white hyphens--auto"><?php the_field('frontpagecta_title'); ?></h2>
+                            <p class="lead text-white mb-0"><?php the_field('frontpagecta_blurbage'); ?></p>
                         </div>
                     </div>
                 </div>
