@@ -10,7 +10,6 @@
     padding-right: 15px;
 
     .ghostkit-col-content {
-        border: 1px solid red;
         margin-left: 0;
         @extend .layout--pingpong--maxwidth;
     }
@@ -45,5 +44,31 @@
         min-height: 576px;
     }
 
+}
+
+
+//******* pricing tiers *********//
+
+.ghostkit-pricing-table-item-title {
+    margin-left: 26px;
+    color: $primary;
+}
+
+ul.ghostkit-pricing-table-item-features {
+    li {
+        margin-left: 26px;
+        position: relative;
+        &:before {
+            position: absolute;
+            left: -26px;
+            font-family: FontAwesome;
+            content: "\f058";
+            color: $primary;
+        }
+    }
+}
+
+.ghostkit-pricing-table-item {
+    height: 100%;
 }
 

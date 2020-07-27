@@ -1,5 +1,5 @@
 <?php if (get_field('lead_text')): ?>
-    <div class="container pt-3">
+    <div class="container pt-3" id="content">
         <div class="row justify-content-center">
             <div class="col-11 col-lg-6 text-center">
                 <p class="lead-xl mb-0">
