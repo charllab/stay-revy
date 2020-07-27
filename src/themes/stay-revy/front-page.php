@@ -50,7 +50,7 @@
             <div class="row">
                 <?php $featuredpropertyimageurl = get_field('featured_property_image'); ?>
                 <div class="col-md-6"
-                     style="background: #666 url(<?php echo $featuredpropertyimageurl['sizes']['large'] ?>) no-repeat center center; background-size: cover;">
+                     style="background: #666 url(<?php echo $featuredpropertyimageurl['sizes']['large'] ?>) no-repeat center bottom; background-size: cover;">
                     <img src="<?php echo $featuredpropertyimageurl['sizes']['large'] ?>" alt=" "
                          class="d-md-none img-fluid">
                 </div>
@@ -109,6 +109,10 @@
                             class="layout--pingpong--maxwidth ml-auto px-50 px-sm-2 px-md-4 pl-lg-3 pl-xxxl-0 pr-lg-4 py-2 py-lg-3 position-relative z-index-lvl-1">
                             <h2 class="text-white hyphens--auto"><?php the_field('frontpagecta_title'); ?></h2>
                             <p class="lead text-white mb-0"><?php the_field('frontpagecta_blurbage'); ?></p>
+                            <?php if (get_field('ctabutton_link')): ?>
+                                <a href="<?php the_field('ctabutton_link') ?>"
+                                   class="btn btn-primary mb-0 mt-1"><?php the_field('ctabutton_text') ?></a>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

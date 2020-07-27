@@ -28,9 +28,9 @@
 
 
 .ghostkit-col-with-bg {
-        max-width: none;
-        padding: 0;
-        min-height: 364px;
+    max-width: none;
+    padding: 0;
+    min-height: 364px;
 }
 
 @include media-breakpoint-up(md) {
@@ -58,6 +58,7 @@ ul.ghostkit-pricing-table-item-features {
     li {
         margin-left: 26px;
         position: relative;
+
         &:before {
             position: absolute;
             left: -26px;
@@ -68,7 +69,44 @@ ul.ghostkit-pricing-table-item-features {
     }
 }
 
-.ghostkit-pricing-table-item {
-    height: 100%;
+
+.basic-extended ul.ghostkit-pricing-table-item-features {
+    li {
+        &:first-of-type {
+            margin-bottom: $spacer;
+
+            &:before {
+                font-family: FontAwesome;
+                content: "\f055";
+            }
+
+        }
+    }
 }
+
+@include media-breakpoint-between(md, lg) {
+    .ghostkit-pricing-table-item {
+        padding: $spacer*.5;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .basic-height .ghostkit-pricing-table-item {
+        min-height: 540px;
+        display: flex;
+        flex-direction: column;
+        .ghostkit-pricing-table-item-button-wrapper,
+        .ghostkit-button-wrapper-inner {
+            margin-top: auto;
+        }
+    }
+}
+
+@include media-breakpoint-up(xxl) {
+    .basic-height .ghostkit-pricing-table-item {
+        min-height: 670px;
+    }
+}
+
+
 

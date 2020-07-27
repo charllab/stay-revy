@@ -72,7 +72,7 @@ if (get_field('frontdesk_property_id')) {
                         <?php the_field('accommodation_description'); ?>
                     </div>
 
-                    <a target="_blank" href="<?php echo $book_url; ?>" class="btn btn-primary mb-2">
+                    <a target="_blank" href="<?php echo esc_url(home_url('/contact')); ?>" class="btn btn-primary mb-2">
                         Book Now
                     </a>
 
