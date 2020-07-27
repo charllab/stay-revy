@@ -28,11 +28,11 @@
         </div>
     </section>
 
-    <section class="bg-secondary text-white py-125">
+    <section class="bg-secondary text-white py-2 py-lg-125">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 text-center text-md-left">
-                    <p class="mb-md-0 small">&copy; <?php echo Date('Y') . ' ' . get_bloginfo('name'); ?></p>
+                <div class="col-lg-4 text-center text-lg-left">
+                    <p class="mb-lg-0">&copy; <?php echo Date('Y') . ' ' . get_bloginfo('name'); ?></p>
                 </div>
                 <div class="col-lg-4 text-center">
                     <p class="mb-lg-0">
@@ -41,8 +41,8 @@
                             href="<?php echo esc_url(home_url('/privacy-policy')); ?>" class="text-white">Privacy&nbsp;Policy</a>
                     </p>
                 </div>
-                <div class="col-md-4 text-center text-md-right">
-                    <p class="mb-0 small">Designed, Developed and Hosted by <a href="https://sproing.ca" target="_blank" class="text-white">Sproing&nbsp;Creative</a>
+                <div class="col-lg-4 text-center text-lg-right">
+                    <p class="mb-0">Designed, Developed and Hosted by <a href="https://sproing.ca" target="_blank" class="text-white">Sproing&nbsp;Creative</a>
                     </p>
                 </div>
             </div>

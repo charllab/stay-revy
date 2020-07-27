@@ -90,7 +90,7 @@ ul.ghostkit-pricing-table-item-features {
     }
 }
 
-@include media-breakpoint-up(md) {
+@include media-breakpoint-up(lg) {
     .basic-height .ghostkit-pricing-table-item {
         min-height: 540px;
         display: flex;
@@ -108,5 +108,9 @@ ul.ghostkit-pricing-table-item-features {
     }
 }
 
+
+.wp-image-488 {
+    margin-bottom: $spacer*2;
+}
 
 
