@@ -36,11 +36,9 @@
 
                 </div><!-- owl-carousel -->
 
-                <div class="page-down__arrow position-absolute d-none d-lg-block w-100 text-center bounce">
-                    <a href="#content" class="w-100 scrollable-anchor"><span class="sr-only">Scroll Down</span></a>
-                </div>
-
             <?php endif; ?>
+
+            <?php get_template_part('includes/book', 'form'); ?>
 
         </div><!-- alignfull container -->
 
