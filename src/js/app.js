@@ -89,7 +89,22 @@ jQuery(function () {
             inputVal = jQuery('#checkInAndOut').val(),
             inputVals = inputVal.split(' - ');
 
-        location.href = "https://book.webrez.com/v31/#/property/2100/location/0/redirect?" + data + "&date_from=" + moment(inputVals[0]).format('YYYYMMDD') + "&date_to=" + moment(inputVals[1]).format('YYYYMMDD');
+        location.href = "https://stayrevy.kigobook.com/properties/?" + "checkin=" + moment(inputVals[0]).format('YYYY-MM-DD') + "&checkout=" + moment(inputVals[1]).format('YYYY-MM-DD') + '&' + data;
+
+
+    });
+
+    //count the guest
+    var inputs = $('input[name="adults"],input[name="children"]'),
+        output = $('input[name="guests"]');
+    function parse(value) {
+        return parseFloat(value.replace(',','.'));
+    }
+    inputs.keyup(function() {
+        var value = parse(inputs[0].value)+parse(inputs[1].value);
+        if (!isNaN(value)) {
+            output.val(value)
+        }
     });
 
     jQuery(".js-num-increment > div").append('<div class="btn btn-primary js-inc js-button-increment px-50 border-0">+</div>');

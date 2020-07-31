@@ -32,7 +32,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 text-center text-lg-left">
-                    <p class="mb-lg-0">&copy; <?php echo Date('Y') . ' ' . get_bloginfo('name'); ?></p>
+                    <p class="mb-lg-0">&copy; <?php echo Date('Y') . ' ' . get_bloginfo('name'); ?>
+                        |  <a href="https://www.instagram.com/stayrevy/" target="_blank" class="text-white">Follouw Us On Instgram <i class="fab fa-instagram"></i></a>
+                    </p>
                 </div>
                 <div class="col-lg-4 text-center">
                     <p class="mb-lg-0">

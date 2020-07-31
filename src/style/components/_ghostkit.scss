@@ -85,14 +85,30 @@ ul.ghostkit-pricing-table-item-features {
 }
 
 @include media-breakpoint-between(md, lg) {
-    .ghostkit-pricing-table-item {
-        padding: $spacer*.5;
+    .ghostkit-pricing-table-item-wrap {
+        .ghostkit-button {
+            padding-left: $spacer;
+            padding-right: $spacer;
+            width: 100%;
+        }
+    }
+}
+
+@media (min-width: 769px) and (max-width: 991.98px) {
+    .basic-height .ghostkit-pricing-table-item {
+        min-height: 750px;
+        display: flex;
+        flex-direction: column;
+        .ghostkit-pricing-table-item-button-wrapper,
+        .ghostkit-button-wrapper-inner {
+            margin-top: auto;
+        }
     }
 }
 
 @include media-breakpoint-up(lg) {
     .basic-height .ghostkit-pricing-table-item {
-        min-height: 540px;
+        min-height: 630px;
         display: flex;
         flex-direction: column;
         .ghostkit-pricing-table-item-button-wrapper,
@@ -104,7 +120,7 @@ ul.ghostkit-pricing-table-item-features {
 
 @include media-breakpoint-up(xxl) {
     .basic-height .ghostkit-pricing-table-item {
-        min-height: 670px;
+        min-height: 712px;
     }
 }
 
@@ -113,4 +129,62 @@ ul.ghostkit-pricing-table-item-features {
     margin-bottom: $spacer*2;
 }
 
+.ghostkit-pricing-table-item-description {
+    margin-left: 26px;
+    font-size: 1.5rem;
+    color: $primary;
+    margin-top: $spacer;
+    font-family: $font-family-serif;
+    &:after {
+        margin-top: $spacer*.5;
+        display: block;
+        font-size: .8rem;
+        content: 'Management Fee';
+    }
+}
 
+.ghostkit-pricing-table-item-popular {
+    position: relative;
+    &:after {
+        display: block;
+        border-radius: 20px;
+        text-align: center;
+        position: absolute;
+        background-color: darken($soft,10%);
+        width: 80%;
+        top: -12px;
+        left: 10%;
+        right: 10%;
+        font-weight: bold;
+        color: white;
+        padding: $spacer*.25 $spacer;
+        content: 'Most Popular';
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .ghostkit-pricing-table-item-popular {
+        position: relative;
+        &:after {
+            top: -15px;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .ghostkit-pricing-table-item-popular {
+        position: relative;
+        &:after {
+            top: -18px;
+        }
+    }
+}
+
+.ghostkit-pricing-table-item-popular {
+
+    border: 2px solid darken($soft,10%);
+
+    .btn-primary, .ghostkit-button {
+            background-color: darken($soft,10%);
+        }
+}

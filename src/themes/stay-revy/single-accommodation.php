@@ -72,7 +72,19 @@ if (get_field('frontdesk_property_id')) {
                         <?php the_field('accommodation_description'); ?>
                     </div>
 
-                    <a target="_blank" href="<?php echo esc_url(home_url('/contact')); ?>" class="btn btn-primary mb-2">
+                    <?php
+
+                    $propUrl = 'https://stayrevy.kigobook.com/properties/';
+                    $propName = get_field('public_headline');
+                    $propName = strtolower($propName);
+                    $propName = preg_replace('/\s+/', ' ', $propName);
+                    $propName = trim(preg_replace('/\s+/', ' ', $propName));
+                    $propName = str_replace(" ", "-", $propName);
+                    $propLink = $propUrl . strtolower($propName);
+
+                    ?>
+
+                    <a target="_blank" href="<?php echo $propLink; ?>" class="btn btn-primary mb-2">
                         Book Now
                     </a>
 

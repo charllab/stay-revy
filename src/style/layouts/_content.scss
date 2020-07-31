@@ -270,7 +270,7 @@ p:empty {
 // ************ Layouts styles ************ //
 
 .layout__banner-check-in {
-    bottom: $spacer;
+    bottom: $spacer*2;
 }
 
 .layout__pingpong--py {
@@ -281,15 +281,7 @@ p:empty {
 @include media-breakpoint-up(md) {
 
     .layout__banner-check-in {
-        bottom: $spacer*2;
-    }
-
-}
-
-@include media-breakpoint-up(lg) {
-
-    .layout__banner-check-in {
-        bottom: $spacer*4;
+        bottom: 20%;
     }
 
 }
