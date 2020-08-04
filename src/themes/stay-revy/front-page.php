@@ -38,7 +38,7 @@
 
             <?php endif; ?>
 
-            <?php get_template_part('includes/book', 'form'); ?>
+            <?php get_template_part('includes/book', 'link'); ?>
 
         </div><!-- alignfull container -->
 
