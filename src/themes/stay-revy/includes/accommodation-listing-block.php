@@ -31,6 +31,9 @@
                 <?php if (get_field('pet_friendly')): ?>
                     <li class="mb-35 mb-lg-250"><i class="fas fa-paw"></i> Pet Friendly</li>
                 <?php endif; ?>
+                <?php if (get_field('private_hub_tub')): ?>
+                    <li class="mb-35 mb-lg-250"><i class="fas fa-hot-tub"></i> Private Hot Tub</li>
+                <?php endif; ?>
 
             </ul><!-- listing-icons -->
         </div><!-- listing-block-copy -->

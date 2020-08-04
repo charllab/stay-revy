@@ -50,6 +50,9 @@ if (get_field('frontdesk_property_id')) {
                         <?php if( get_field('pet_friendly') ): ?>
                             <li class="mb-35"><i class="listing-icons--min-width fas text-primary fa-paw"></i> Pet Friendly</li>
                         <?php endif; ?>
+                        <?php if (get_field('private_hub_tub')): ?>
+                            <li class="mb-35 mb-lg-250"><i class="text-primary fas fa-hot-tub"></i> Private Hot Tub</li>
+                        <?php endif; ?>
                         <?php while (have_rows('accommodation_specs')) : the_row(); ?>
 
                             <li class="mb-35">

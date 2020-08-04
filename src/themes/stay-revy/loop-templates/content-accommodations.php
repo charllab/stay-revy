@@ -187,11 +187,16 @@ $accom_query = new WP_Query($args);
 
                                         <?php } ?>
                                     </div>
-                                    <div class="custom-control custom-checkbox mb-1">
+                                    <div class="custom-control custom-checkbox">
                                         <input
                                             type="checkbox" <?php echo(isset($query['pets']) && $query['pets'] == 1 ? 'checked' : ''); ?>
                                             name="pets" value="1" class="custom-control-input" id="isPetFriendly">
                                         <label class="custom-control-label" for="isPetFriendly">Pet Friendly</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-1">
+                                        <input type="checkbox" <?php echo(isset($query['hottub']) && $query['hottub'] == 1 ? 'checked' : ''); ?>
+                                               name="hottub" value="1" class="custom-control-input" id="privateHotTub">
+                                        <label class="custom-control-label" for="privateHotTub">Private Hot Tub</label>
                                     </div>
 
 
