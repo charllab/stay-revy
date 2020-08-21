@@ -539,6 +539,30 @@ button.owl-dot.active {
 
 }
 
+.accommodation-img {
+    height: $spacer*14;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.compat-object-fit {
+    background-size: cover;
+    background-position: center center;
+    border: 10px solid white;
+
+    & > .img__object,
+    & > .gallery-item > .accommodation-img {
+        opacity: 0;
+    }
+
+    & > .gallery-item {
+        display: block;
+    }
+}
+
+
+
 //******* Gutenberg *********//
 
 .has-medium-font-size {

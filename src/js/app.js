@@ -136,6 +136,19 @@ jQuery(function () {
         location.href = currentUrl + '?' + jQuery('.js-search-form').serialize();
     });
 
+    // ie11 object-fit fallback
+    if (!Modernizr.objectfit || !Modernizr.smil) {
+        $('.js-img-obj-fit__container').each(function () {
+            var $container = $(this),
+                imgUrl = $container.find('img').prop('src');
+            if (imgUrl) {
+                $container
+                    .css('backgroundImage', 'url(' + imgUrl + ')')
+                    .addClass('compat-object-fit');
+            }
+        });
+    }
+
 
 });
 

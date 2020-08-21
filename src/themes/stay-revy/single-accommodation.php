@@ -115,11 +115,11 @@ if (get_field('frontdesk_property_id')) {
 
                     <?php $image = get_sub_field('accommodation_gallery_image'); ?>
 
-                    <div class="col-12 col-sm-6 col-lg-4 js-gallery">
-                        <a href="<?php echo $image['sizes']['extra-large']; ?>">
+                    <div class="col-12 col-sm-6 col-lg-4 js-gallery js-img-obj-fit__container">
+                        <a href="<?php echo $image['sizes']['extra-large']; ?>" class="gallery-item">
                             <img src="<?php echo $image['sizes']['gallery-image']; ?>"
                                  alt="<?php bloginfo('name'); ?> - <?php the_title(); ?>"
-                                 class="img-fluid d-block mb-1 mb-md-150">
+                                 class="img-fluid d-block mb-1 mb-md-150 accommodation-img">
                         </a>
                     </div><!-- col -->
 
