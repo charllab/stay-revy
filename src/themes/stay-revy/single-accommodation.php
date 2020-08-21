@@ -91,11 +91,14 @@ if (get_field('frontdesk_property_id')) {
                         Book Now
                     </a>
 
+                    <?php if( get_field('google_map_embed_code') ): ?>
                     <div class="mb-2">
                         <div class="embed-responsive embed-responsive-16by9">
                             <?php the_field('google_map_embed_code'); ?>
                         </div>
                     </div>
+                    <?php endif; ?>
+
                 </div
             </div><!-- col -->
         </div><!-- row -->
