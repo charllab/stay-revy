@@ -158,7 +158,7 @@ $accom_query = new WP_Query($args);
                                         </div><!-- flex -->
                                     </div>
 
-                                    <div class="custom-control custom-checkbox mb-250 mb-lg-0">
+
                                         <?php
                                         $cat_args = [
                                             'orderby' => 'name',
@@ -177,6 +177,7 @@ $accom_query = new WP_Query($args);
                                                 $isChecked = in_array($category->term_taxonomy_id, $query['c']);
                                             }
                                             ?>
+                                    <div class="custom-control custom-checkbox mb-250 mb-lg-0">
                                             <input type="checkbox" <?php echo($isChecked ? 'checked' : ''); ?>
                                                    name="c[]"
                                                    value="<?php echo $category->term_taxonomy_id ?>"
@@ -184,9 +185,9 @@ $accom_query = new WP_Query($args);
                                                    id="cat-<?php echo $category->name; ?>">
                                             <label class="custom-control-label mb-lg-0"
                                                    for="cat-<?php echo $category->name ?>"><?php echo $category->name ?></label>
-
-                                        <?php } ?>
                                     </div>
+                                        <?php } ?>
+
                                     <div class="custom-control custom-checkbox">
                                         <input
                                             type="checkbox" <?php echo(isset($query['pets']) && $query['pets'] == 1 ? 'checked' : ''); ?>
