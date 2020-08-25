@@ -2,7 +2,7 @@
 if( get_field('banner_image') ) {
     $headerimg = get_field('banner_image');
 } else {
-    $headerimg = get_field('default_header', 'options');
+    $headerimg = get_field('default_page_header', 'options');
 }
 ?>
 
