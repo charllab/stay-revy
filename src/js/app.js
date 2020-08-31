@@ -149,6 +149,16 @@ jQuery(function () {
         });
     }
 
+    // GA Book Now Button Tracking
+    jQuery('a[href="https://stayrevy.kigobook.com/properties/revelstoke-house-luxurious-log-home"]').on('click', function () {
+        // Track phone clicks
+        trackEvent('Click', {
+            category: 'Revelstoke House Book Now',
+            label: window.location.href,
+            value: 3000
+        });
+    });
+
 
 });
 
