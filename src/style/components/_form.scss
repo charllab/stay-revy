@@ -169,6 +169,12 @@ label.listing-page-sidemenu__label {
     }
 }
 
+// text-area border
+body #gform_wrapper_1 .gform_body .gform_fields .gfield input[type=text],
+body #gform_wrapper_1 .gform_body .gform_fields .gfield input[type=email],
+body #gform_wrapper_1 .gform_body .gform_fields .gfield input[type=tel],
+body #gform_wrapper_1 .gform_body .gform_fields .gfield textarea {border: 1px solid #bfbfbf}
+
 // thank you message
 
 div#gform_confirmation_message_1 {
@@ -186,12 +192,12 @@ div#gform_confirmation_message_1 {
     display: block;
     color: #222;
     line-height: 1.3;
-    padding: 6px !important;
+    padding: 5px 3px !important;
     width: 100%;
     max-width: 100%; /* useful when width is set to anything other than 100% */
     box-sizing: border-box;
     margin: 0;
-    border: 1px solid #767676;
+    border: 1px solid #bfbfbf;
     box-shadow: none;
     border-radius: 2px;
     -moz-appearance: none;
