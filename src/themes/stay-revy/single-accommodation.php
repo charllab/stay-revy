@@ -21,7 +21,7 @@ if (get_field('frontdesk_property_id')) {
     </div><!-- container -->
 </section>
 
-<div class="container-fluid px-0 general-sect__pb">
+<div class="container-fluid px-0 pb-3">
     <div class="row no-gutters">
         <div class="col-12">
             <img src="<?php echo $image['sizes']['page-banner']; ?>" alt="<?php the_title(); ?>"
@@ -33,11 +33,11 @@ if (get_field('frontdesk_property_id')) {
 <section class="section pb-0">
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <div class="pr-lg-2">
-                    <p class="text-primary font-weight-bold"> <?php echo the_field('address'); ?></p>
-                </div>
-            </div>
+<!--            <div class="col-12">-->
+<!--                <div class="pr-lg-2">-->
+<!--                    <p class="text-primary font-weight-bold"> --><?php //echo the_field('address'); ?><!--</p>-->
+<!--                </div>-->
+<!--            </div>-->
             <div class="col-11 col-lg-4 order-lg-1">
                 <div class="accommodation-details">
 
