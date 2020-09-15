@@ -19,7 +19,7 @@ $args = [
     'post_type' => 'accommodation',
     'posts_per_page' => -1,
     'meta_key' => 'max_people',
-    'orderby' => 'meta_value_num',
+//    'orderby' => 'meta_value_num',
     'order' => 'ASC',
 ];
 
