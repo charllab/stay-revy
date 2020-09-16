@@ -45,7 +45,7 @@ if (get_field('frontdesk_property_id')) {
                         <li class="mb-35"><i class="listing-icons--min-width fas text-primary fa-bed"></i> <?php the_field('number_of_bedrooms'); ?> Bedrooms</li>
                         <li class="mb-35"><i class="listing-icons--min-width fas text-primary fa-bath"></i> <?php the_field('number_of_bathrooms'); ?> Baths</li>
                         <li class="mb-35"><i class="listing-icons--min-width fas text-primary fa-user-friends"></i> Max <?php the_field('max_people'); ?> People</li>
-                        <li class="mb-35"><i class="listing-icons--min-width fas text-primary fa-calendar"></i> Min <?php the_field('max_people'); ?> Days</li>
+                        <li class="mb-35"><i class="listing-icons--min-width fas text-primary fa-calendar"></i> Min <?php the_field('min_stay'); ?> Days</li>
                         <li class="mb-35"><i class="listing-icons--min-width fas text-primary fa-crop-alt"></i> <?php the_field('square_feet'); ?> SQ FT</li>
                         <?php if( get_field('pet_friendly') ): ?>
                             <li class="mb-35"><i class="listing-icons--min-width fas text-primary fa-paw"></i> Pet Friendly</li>
