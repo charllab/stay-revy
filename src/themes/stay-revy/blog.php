@@ -7,82 +7,91 @@
 global $post;
 get_header(); ?>
 
-    <main class="blog-php">
+<main>
+    <?php get_template_part('includes/blog', 'banner'); ?>
 
-        <div class="container-a--maxwidth position-relative">
+    <section class="general-sect__padding">
 
-            <div class="bg-vector__a bg-vector--light-a position-absolute"></div>
+        <div class="container">
 
-            <section class="general-sect__padding">
-                <div class="container position-relative">
+                    <?php
+                    $limit = 10;
 
-                    <div class="row justify-content-center">
-                        <div class="col-xl-10 text-center">
-                            <h1><?php the_field('blog_listing'); ?></h1>
-                            <h2 class="h4 mb-2"><?php the_field('blog_subline'); ?></h2>
-                        </div>
-                    </div>
+                    $temp = $wp_query;
+                    $wp_query = null;
 
-                    <div class="row justify-content-center">
-                        <div class="col-lg-10">
-                            <div class="card-deck">
+                    $wp_query = new WP_Query();
+                    $wp_query->query('posts_per_page=' . $limit . '&paged=' . $paged);
 
-                                <?php
-                                $limit = 10;
+                    while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
 
-                                $temp = $wp_query;
-                                $wp_query = null;
 
-                                $wp_query = new WP_Query();
-                                $wp_query->query('posts_per_page=' . $limit . '&paged=' . $paged);
+                     <div class="row justify-content-center align-items-center pb-2">
 
-                                while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+                        <div class="col-lg-6 js-img-obj-fit__container">
+                            <div class="blog-listing__item">
 
-                                    <div class="card card--styled mb-1 mb-md-2 rounded-0"
-                                         id="post-<?php the_ID(); ?>">
+                                <a href="<?php the_permalink(); ?>" title="Read more">
 
-                                        <a href="<?php the_permalink(); ?>" title="Read more" class="ie-flex__a-min-height--fix">
-                                            <img class="card-img-top"
-                                                 src="<?php the_post_thumbnail_url(); ?>"
-                                                 alt="<?php the_title(); ?>"
-                                            >
-                                        </a>
+                                    <?php
+                                    if( get_field('banner_image') ) {
+                                        $headerimg = get_field('banner_image');
+                                    }
+                                    else {
+                                        $headerimg = get_field('default_header', 'options');
+                                    }
+                                    ?>
 
-                                        <div class="card-body pb-0">
-                                            <h4 class="card-title"><?php the_title(); ?></h4>
-                                            <p class="card-text"><?php echo the_excerpt(); ?></p>
-                                        </div>
-                                        <div class="card-footer card-footer--styled border-0 pt-0">
-                                            <a class="inline-link--primary d-block mb-50"
-                                               href="<?php the_permalink(); ?>">Read More</a>
-                                        </div>
-                                    </div>
-
-                                <?php endwhile; ?>
-
+                                    <img src="<?php echo $headerimg['sizes']['large']; ?>" alt="<?php the_title(); ?>" class="img-fluid d-block blog-listing__img">
+                                </a>
                             </div>
+
                         </div>
-                    </div>
 
-                </div>
-            </section>
+                        <div class="col-lg-6">
 
-            <section>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-10 col-xl-8 text-center">
-                            <nav aria-label="Page navigation">
 
-                                <?php bootstrap_pagination(); ?>
+                    <div class="listing-block-wrapper d-xxl-flex">
 
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                        <div class="listing-block-content p-1 py-lg-0">
 
-        </div>
+                            <h2 class="h4 clr-secondary"><?php the_title(); ?></h2>
 
-    </main>
+                            <div class="listing-block-copy">
+
+                                <p>
+                                    <?php echo get_excerpt(); ?>
+                                </p>
+
+                            </div><!-- listing-block-copy -->
+
+                            <div class="listing-block-button">
+                                <a href="<?php the_permalink(); ?>" class="btn btn-primary mb-150 mb-lg-0">View Details</a>
+                            </div><!-- listing-block-button -->
+
+                        </div><!-- listing-block-content -->
+                    </div><!-- listing-block-wrapper -->
+
+                </div><!-- col-->
+            </div><!-- row -->
+
+                <?php endwhile; ?>
+
+
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-xl-8 text-center">
+                    <nav aria-label="Page navigation">
+
+                        <?php bootstrap_pagination(); ?>
+
+                    </nav>
+                </div><!-- col-->
+            </div><!-- row -->
+
+        </div><!-- container -->
+    </section><!-- .section -->
+
+
+</main>
 
 <?php get_footer(); ?>

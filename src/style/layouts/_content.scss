@@ -561,7 +561,45 @@ button.owl-dot.active {
     }
 }
 
+//******* Gutenberg *********//
 
+.blog-listing__img {
+    height: $spacer*20;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.compat-object-fit {
+    background-size: cover;
+    background-position: center center;
+    border: 10px solid white;
+
+    & > .img__object,
+    & > .blog-listing__item > .blog-listing__img {
+        opacity: 0;
+    }
+
+    & > .blog-listing__item {
+        display: block;
+    }
+}
+
+.next-prev_container {
+    .row {
+        @include media-breakpoint-up(lg) {
+            max-width: 66.66667%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+}
+
+ol.list-styled {
+    padding-left: 1.05rem;
+    margin-bottom: .5rem;
+}
 
 //******* Gutenberg *********//
 

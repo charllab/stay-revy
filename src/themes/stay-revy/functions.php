@@ -49,6 +49,7 @@ if (!function_exists('custom_after_setup_theme')) {
         add_image_size('page-banner', 1440, 566, true, ['center', 'center']);
 
         remove_theme_support('custom-background');
+        add_post_type_support('page', 'excerpt');
         remove_theme_support('post-thumbnails');
 
         add_image_size('gallery-image', 1440, 1080, true, ['center', 'center']);
@@ -127,3 +128,19 @@ function bootstrap_pagination($echo = true)
         }
     }
 }
+
+/* trim that excerpt */
+function get_excerpt()
+{
+    $excerpt = get_the_content();
+    $excerpt = preg_replace(" ([.*?])", '', $excerpt);
+    $excerpt = strip_shortcodes($excerpt);
+    $excerpt = strip_tags($excerpt);
+    $excerpt = substr($excerpt, 0, 280);
+    $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+    $excerpt = trim(preg_replace('/\s+/', ' ', $excerpt));
+    $excerpt = $excerpt . '...';
+    return $excerpt;
+}
+
+/* use get_excerpt() instead of the_excerpt() */
