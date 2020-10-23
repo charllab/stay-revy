@@ -1,4 +1,16 @@
 <?php
+
+/* Blog */
+require get_template_directory() . '/classes/class-twentynineteen-svg-icons.php';
+require get_template_directory() . '/classes/class-twentynineteen-walker-comment.php';
+require get_template_directory() . '/inc/template-functions.php';
+require get_template_directory() . '/inc/icon-functions.php';
+require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . '/inc/customizer.php';
+
+
+
+
 /* Require Includes */
 include_once get_template_directory().'/includes/gutenburg.php';
 include_once get_template_directory().'/includes/helper-functions.php';
