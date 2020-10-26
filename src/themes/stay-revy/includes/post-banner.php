@@ -7,7 +7,7 @@ else {
 }
 ?>
 
-<section class="general-sect__padding position-relative" style="background: #202020 url(<?php echo $headerimg['sizes']['large']; ?>)no-repeat center center; background-size: cover;">
+<section class="py-4 py-md-8 position-relative post-banner--bg-pos" style="background: #202020 url(<?php echo $headerimg['sizes']['large']; ?>)no-repeat center center; background-size: cover;">
     <div class="block__tint-overlay position-absolute"></div>
     <div class="container position-relative z-index-lvl-1">
         <div class="row justify-content-center">

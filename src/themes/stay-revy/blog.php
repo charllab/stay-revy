@@ -66,7 +66,7 @@ get_header(); ?>
                             </div><!-- listing-block-copy -->
 
                             <div class="listing-block-button">
-                                <a href="<?php the_permalink(); ?>" class="btn btn-primary mb-150 mb-lg-0">View Details</a>
+                                <a href="<?php the_permalink(); ?>" class="btn btn-primary mb-150 mb-lg-0">View Blog</a>
                             </div><!-- listing-block-button -->
 
                         </div><!-- listing-block-content -->

@@ -612,4 +612,12 @@ ol.list-styled {
     }
 }
 
+@media (max-width:1200px) {
+    .wp-block-media-text.has-media-on-the-right .wp-block-media-text__media,
+    .wp-block-media-text .wp-block-media-text__media {
+        grid-row: none;
+    }
+}
+
+
 
