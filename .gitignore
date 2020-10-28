@@ -11,3 +11,5 @@ dist/
 
 public_html/wordpress
 public_html/latest.zip
+composer.lock
+package-lock.json
