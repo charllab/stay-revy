@@ -149,10 +149,28 @@ jQuery(function () {
         });
     }
 
-    // GA Book Now Button Tracking
+    // GA RevelstokeHouse Book Now Button Tracking
     jQuery('a[href="https://stayrevy.kigobook.com/properties/revelstoke-house-luxurious-log-home"]').on('click', function () {
         trackEvent('Click', {
             category: 'RevelstokeHouse',
+            label: window.location.href,
+            value: 3000
+        });
+    });
+
+    // GA RevedUpOut Book Now Button Tracking
+    jQuery('a[href="https://stayrevy.kigobook.com/properties/reved-up-&-out-tasteful-2-bedroom-condo-close-to-resort-with-hot-tub"]').on('click', function () {
+        trackEvent('Click', {
+            category: 'RevedUpOut',
+            label: window.location.href,
+            value: 3000
+        });
+    });
+
+    // GA RevyPow Book Now Button Tracking
+    jQuery('a[href="https://stayrevy.kigobook.com/properties/revy-pow-pad-3-bedroom-condo-minutes-from-revelstoke-mountain-resort"]').on('click', function () {
+        trackEvent('Click', {
+            category: 'RevyPow',
             label: window.location.href,
             value: 3000
         });
