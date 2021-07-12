@@ -41,15 +41,15 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div class="notice-bar bg-danger py-1">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 text-center text-white">
-                <p class="mb-0"><span class="d-block d-md-inline mb-50 mb-md-0"><b>COVID-19 Notice:</b> What is Stay Revy doing to keep you safe?</span><a href="<?php echo esc_url(home_url('/covid-19')); ?>" class="btn btn-light mb-0 ml-md-50">Read More</a></p>
-            </div>
-        </div>
-    </div>
-</div>
+<!--<div class="notice-bar bg-danger py-1">-->
+<!--    <div class="container">-->
+<!--        <div class="row justify-content-center">-->
+<!--            <div class="col-12 text-center text-white">-->
+<!--                <p class="mb-0"><span class="d-block d-md-inline mb-50 mb-md-0"><b>COVID-19 Notice:</b> What is Stay Revy doing to keep you safe?</span><a href="--><?php //echo esc_url(home_url('/covid-19')); ?><!--" class="btn btn-light mb-0 ml-md-50">Read More</a></p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 <div class="push">
 
