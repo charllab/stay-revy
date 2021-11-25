@@ -5,11 +5,11 @@ jQuery(function () {
         side: 'right',
         menuWidth: '16rem',
         easyClose: true,
-        afterOpen: function() {
-            jQuery( 'body' ).toggleClass('no-scroll');
+        afterOpen: function () {
+            jQuery('body').toggleClass('no-scroll');
         },
-        afterClose: function() {
-            jQuery( 'body' ).toggleClass('no-scroll');
+        afterClose: function () {
+            jQuery('body').toggleClass('no-scroll');
         }
     });
 
@@ -98,10 +98,10 @@ jQuery(function () {
     var inputs = $('input[name="adults"],input[name="children"]'),
         output = $('input[name="guests"]');
     function parse(value) {
-        return parseFloat(value.replace(',','.'));
+        return parseFloat(value.replace(',', '.'));
     }
-    inputs.keyup(function() {
-        var value = parse(inputs[0].value)+parse(inputs[1].value);
+    inputs.keyup(function () {
+        var value = parse(inputs[0].value) + parse(inputs[1].value);
         if (!isNaN(value)) {
             output.val(value)
         }
@@ -176,6 +176,16 @@ jQuery(function () {
         });
     });
 
+    // GA BegbieView Book Now Button Tracking
+    jQuery('a[href="https://stayrevy.kigobook.com/properties/begbie-views-retreat;-breathtaking-scenery-and-luxury-property"]').on('click', function () {
+        trackEvent('Click', {
+            category: 'BegbieView',
+            label: window.location.href,
+            value: 3000
+        });
+    });
+
+
 
 });
 
@@ -211,9 +221,9 @@ var targetBlankExternalLinks = function () {
         + ')|(localhost:\\d{4})|(\\/.*))(\\/.*)?$', '');
 
     jQuery('a').filter(function () {
-            var href = jQuery(this).attr('href');
-            return !internalLinkRegex.test(href);
-        })
+        var href = jQuery(this).attr('href');
+        return !internalLinkRegex.test(href);
+    })
         .each(function () {
             jQuery(this).attr('target', '_blank');
         });
