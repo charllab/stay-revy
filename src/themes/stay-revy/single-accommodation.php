@@ -44,14 +44,14 @@ if (get_field('frontdesk_property_id')) {
                     <ul class="listing-icons list-unstyled mb-1 text-capitalize d-flex flex-wrap d-lg-block">
                         <li class="mb-35"><i class="listing-icons--min-width fas text-primary fa-bed"></i> <?php the_field('number_of_bedrooms'); ?> Bedrooms</li>
                         <li class="mb-35"><i class="listing-icons--min-width fas text-primary fa-bath"></i> <?php the_field('number_of_bathrooms'); ?> Baths</li>
-                        <li class="mb-35"><i class="listing-icons--min-width fas text-primary fa-user-friends"></i> Max <?php the_field('max_people'); ?> People</li>
+                        <li class="mb-35"><i class="listing-icons--min-width fas text-primary fa-user-friends"></i> <?php the_field('max_people'); ?> People</li>
                         <li class="mb-35"><i class="listing-icons--min-width fas text-primary fa-calendar"></i> Min <?php the_field('min_stay'); ?> Days</li>
                         <li class="mb-35"><i class="listing-icons--min-width fas text-primary fa-crop-alt"></i> <?php the_field('square_feet'); ?> SQ FT</li>
                         <?php if( get_field('pet_friendly') ): ?>
                             <li class="mb-35"><i class="listing-icons--min-width fas text-primary fa-paw"></i> Pet Friendly</li>
                         <?php endif; ?>
                         <?php if (get_field('private_hub_tub')): ?>
-                            <li class="mb-35 mb-lg-250"><i class="text-primary fas fa-hot-tub"></i> Private Hot Tub</li>
+                            <li class="mb-35 mb-lg-250"><i class="text-primary fas fa-hot-tub"></i> Hot Tub</li>
                         <?php endif; ?>
                         <?php while (have_rows('accommodation_specs')) : the_row(); ?>
 
