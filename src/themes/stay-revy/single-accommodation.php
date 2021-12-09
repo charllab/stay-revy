@@ -33,22 +33,68 @@ if (get_field('frontdesk_property_id')) {
 <section class="section pb-0">
     <div class="container">
         <div class="row">
-<!--            <div class="col-12">-->
-<!--                <div class="pr-lg-2">-->
-<!--                    <p class="text-primary font-weight-bold"> --><?php //echo the_field('address'); ?><!--</p>-->
-<!--                </div>-->
-<!--            </div>-->
+            <!--            <div class="col-12">-->
+            <!--                <div class="pr-lg-2">-->
+            <!--                    <p class="text-primary font-weight-bold"> -->
+            <?php //echo the_field('address'); ?><!--</p>-->
+            <!--                </div>-->
+            <!--            </div>-->
+
+            <?php
+
+            $propUrl = 'https://stayrevy.kigobook.com/properties/';
+            $propName = get_field('public_headline');
+            $propName = strtolower($propName);
+            $propName = preg_replace('/\s+/', ' ', $propName);
+            $propName = trim(preg_replace('/\s+/', ' ', $propName));
+            $propName = str_replace(" ", "-", $propName);
+            $propLink = $propUrl . strtolower($propName);
+
+            ?>
+
+            <div class="col-12 col-lg-8 order-0">
+
+                <?php
+                $link = get_field('airbnb_link');
+                if ($link) : ?>
+                    <a target="_blank" href="<?php echo esc_url($link); ?>" class="btn btn-primary mb-2">
+                        Book Now
+                    </a>
+                <?php else : ?>
+                    <a target="_blank" href="<?php echo $propLink; ?>" class="btn btn-primary mb-2">
+                        Book Now
+                    </a>
+                <?php endif; ?>
+
+            </div>
+
             <div class="col-11 col-lg-4 order-lg-1">
                 <div class="accommodation-details">
 
                     <ul class="listing-icons list-unstyled mb-1 text-capitalize d-flex flex-wrap d-lg-block">
-                        <li class="mb-35"><i class="listing-icons--min-width fas text-primary fa-bed"></i> <?php the_field('number_of_bedrooms'); ?> Bedrooms</li>
-                        <li class="mb-35"><i class="listing-icons--min-width fas text-primary fa-bath"></i> <?php the_field('number_of_bathrooms'); ?> Baths</li>
-                        <li class="mb-35"><i class="listing-icons--min-width fas text-primary fa-user-friends"></i> <?php the_field('max_people'); ?> People</li>
-                        <li class="mb-35"><i class="listing-icons--min-width fas text-primary fa-calendar"></i> Min <?php the_field('min_stay'); ?> Days</li>
-                        <li class="mb-35"><i class="listing-icons--min-width fas text-primary fa-crop-alt"></i> <?php the_field('square_feet'); ?> SQ FT</li>
-                        <?php if( get_field('pet_friendly') ): ?>
-                            <li class="mb-35"><i class="listing-icons--min-width fas text-primary fa-paw"></i> Pet Friendly</li>
+                        <li class="mb-35"><i
+                                class="listing-icons--min-width fas text-primary fa-bed"></i> <?php the_field('number_of_bedrooms'); ?>
+                            Bedrooms
+                        </li>
+                        <li class="mb-35"><i
+                                class="listing-icons--min-width fas text-primary fa-bath"></i> <?php the_field('number_of_bathrooms'); ?>
+                            Baths
+                        </li>
+                        <li class="mb-35"><i
+                                class="listing-icons--min-width fas text-primary fa-user-friends"></i> <?php the_field('max_people'); ?>
+                            People
+                        </li>
+                        <li class="mb-35"><i class="listing-icons--min-width fas text-primary fa-calendar"></i>
+                            Min <?php the_field('min_stay'); ?> Days
+                        </li>
+                        <li class="mb-35"><i
+                                class="listing-icons--min-width fas text-primary fa-crop-alt"></i> <?php the_field('square_feet'); ?>
+                            SQ FT
+                        </li>
+                        <?php if (get_field('pet_friendly')): ?>
+                            <li class="mb-35"><i class="listing-icons--min-width fas text-primary fa-paw"></i> Pet
+                                Friendly
+                            </li>
                         <?php endif; ?>
                         <?php if (get_field('private_hub_tub')): ?>
                             <li class="mb-35 mb-lg-250"><i class="text-primary fas fa-hot-tub"></i> Hot Tub</li>
@@ -76,27 +122,23 @@ if (get_field('frontdesk_property_id')) {
                     </div>
 
                     <?php
+                    $link = get_field('airbnb_link');
+                    if ($link) : ?>
+                        <a target="_blank" href="<?php echo esc_url($link); ?>" class="btn btn-primary mb-2">
+                            Book Now
+                        </a>
+                    <?php else : ?>
+                        <a target="_blank" href="<?php echo $propLink; ?>" class="btn btn-primary mb-2">
+                            Book Now
+                        </a>
+                    <?php endif; ?>
 
-                    $propUrl = 'https://stayrevy.kigobook.com/properties/';
-                    $propName = get_field('public_headline');
-                    $propName = strtolower($propName);
-                    $propName = preg_replace('/\s+/', ' ', $propName);
-                    $propName = trim(preg_replace('/\s+/', ' ', $propName));
-                    $propName = str_replace(" ", "-", $propName);
-                    $propLink = $propUrl . strtolower($propName);
-
-                    ?>
-
-                    <a target="_blank" href="<?php echo $propLink; ?>" class="btn btn-primary mb-2">
-                        Book Now
-                    </a>
-
-                    <?php if( get_field('google_map_embed_code') ): ?>
-                    <div class="mb-2">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <?php the_field('google_map_embed_code'); ?>
+                    <?php if (get_field('google_map_embed_code')): ?>
+                        <div class="mb-2">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <?php the_field('google_map_embed_code'); ?>
+                            </div>
                         </div>
-                    </div>
                     <?php endif; ?>
 
                 </div
