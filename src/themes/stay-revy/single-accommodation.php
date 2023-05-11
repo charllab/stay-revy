@@ -21,7 +21,8 @@ if (get_field('frontdesk_property_id')) {
     </div><!-- container -->
 </section>
 
-<div class="container-fluid px-0 pb-3">
+<!--Old listing page banner image disable right now *Start*-->
+<div class="container-fluid px-0 pb-3 d-none">
     <div class="row no-gutters">
         <div class="col-12">
             <img src="<?php echo $image['sizes']['page-banner']; ?>" alt="<?php the_title(); ?>"
@@ -29,6 +30,84 @@ if (get_field('frontdesk_property_id')) {
         </div><!-- col -->
     </div><!-- row -->
 </div><!-- container -->
+<!-- *End*-->
+
+
+<div class="container-fluid px-0 pb-3">
+    <div class="row no-gutters">
+        <div class="col-12">
+
+
+            <?php
+            //code to display the banners
+            //check that the page has banners
+            if( have_rows('banners') ):
+                //count the number of banners
+                $count = count(get_field('banners'));?>
+                <div id="banner-carousel" class="carousel slide" data-ride="carousel">
+                    <?php
+                    //add the indicators only if there is more than one banner
+                    if ($count > 1) {?>
+                        <div class="carousel-indicators pb-1">
+                            <?php $i=0; ?>
+                            <?php while ($i < $count) { ?>
+                                <li data-target="#banner-carousel" data-slide-to="<?php echo $i; ?>" class="<?php if ($i == 0) {echo'active';} ?> bg-primary" aria-label="Slide <?php echo $i; ?>"></li>
+                                <?php $i++; } ?>
+                        </div>
+                    <?php } ?>
+                    <?php //loop through all the banners ?>
+                    <?php $i=0; ?>
+                    <div class="carousel-inner">
+                        <?php while( have_rows('banners') ): the_row();
+
+                            //get the banner variables.
+                            $banner_image = get_sub_field('banner_image');
+
+
+                            ?>
+                            <div class="carousel-item  <?php if ($i == 0) {echo'active';} ?>">
+
+
+                                <img src="<?php echo $banner_image['sizes']['page-banner']; ?>" alt="<?php the_title(); ?>"
+                                     class="img-fluid w-100 d-block">
+
+                            </div>
+                            <?php $i++; ?>
+                        <?php endwhile; ?>
+                    </div>
+
+                    <?php if ($count > 1) {?>
+                        <a class="carousel-control-prev" href="#banner-carousel" role="button" data-slide="prev">
+                            <i class="fas fa-chevron-left fa-2x text-primary"></i>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#banner-carousel" role="button" data-slide="next">
+                            <i class="fas fa-chevron-right fa-2x text-primary"></i>
+                            <span class="sr-only">Next</span>
+                        </a>
+
+                    <?php } ?>
+                </div>
+            <?php else:?>
+                <img src="<?php echo $image['sizes']['page-banner']; ?>" alt="<?php the_title(); ?>"
+                     class="img-fluid w-100 d-block">
+
+            <?php endif;
+            //And that's it!!!
+
+            ?>
+
+
+
+
+
+        </div><!-- col -->
+    </div><!-- row -->
+</div><!-- container -->
+
+
+
+
 
 <section class="section pb-0">
     <div class="container">
@@ -120,6 +199,7 @@ if (get_field('frontdesk_property_id')) {
                     <div class="mb-150">
                         <?php the_field('accommodation_description'); ?>
                     </div>
+
 
                     <?php
                     $link = get_field('airbnb_link');

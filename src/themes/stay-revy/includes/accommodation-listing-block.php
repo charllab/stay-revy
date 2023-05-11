@@ -1,7 +1,78 @@
 <?php $image = get_field('accommodation_banner_image'); ?>
 
+<!--Old listing-block-img disable right now *Start*-->
+<div class="listing-block-img d-none" style="background-image: url(<?php echo $image['sizes']['large']; ?>)"></div>
+<!--*End*-->
+
 <div class="listing-block-wrapper mb-lg-1 d-xxl-flex">
-    <div class="listing-block-img" style="background-image: url(<?php echo $image['sizes']['large']; ?>)"></div>
+
+
+    <?php
+    //code to display the banners
+    //check that the page has banners
+    if( have_rows('banners') ):
+        //count the number of banners
+        $count = count(get_field('banners'));?>
+        <div id="banner-carousel" class="carousel slide listing-block-img border-0" data-interval="false">
+            <?php
+            //add the indicators only if there is more than one banner
+            if ($count > 1) {?>
+                <div class="carousel-indicators listing-block-indicators pb-1">
+                    <?php $i=0; ?>
+                    <?php while ($i < $count) { ?>
+                        <li data-target="#banner-carousel" data-slide-to="<?php echo $i; ?>" class="<?php if ($i == 0) {echo'active';} ?> bg-primary" aria-label="Slide <?php echo $i; ?>"></li>
+                        <?php $i++; } ?>
+                </div>
+            <?php } ?>
+            <?php //loop through all the banners ?>
+            <?php $i=0; ?>
+            <div class="carousel-inner h-100">
+                <?php while( have_rows('banners') ): the_row();
+
+                    //get the banner variables.
+                    $banner_image = get_sub_field('banner_image');
+
+
+                    ?>
+
+
+                    <div class="carousel-item h-100 <?php if ($i == 0) {echo'active';} ?>">
+
+                        <div style="background: url('<?php echo $banner_image['sizes']['large']; ?>'); background-size: cover;
+                            background-position: 50%;
+                            background-repeat: no-repeat;" class="h-100 listing-block-img pt-2">
+                        </div>
+
+
+
+
+
+                    </div>
+                    <?php $i++; ?>
+                <?php endwhile; ?>
+            </div>
+
+            <?php if ($count > 1) {?>
+                <a class="carousel-control-prev" href="#banner-carousel" role="button" data-slide="prev">
+                    <i class="fas fa-chevron-left fa-2x text-primary"></i>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#banner-carousel" role="button" data-slide="next">
+                    <i class="fas fa-chevron-right fa-2x text-primary"></i>
+                    <span class="sr-only">Next</span>
+                </a>
+
+            <?php } ?>
+        </div>
+    <?php else:?>
+        <div class="listing-block-img" style="background-image: url(<?php echo $image['sizes']['large']; ?>)"></div>
+
+    <?php endif;
+    //And that's it!!!
+
+    ?>
+
+
     <!-- listing-block-img -->
 
     <div class="listing-block-content p-1 py-lg-2">
