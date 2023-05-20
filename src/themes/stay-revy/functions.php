@@ -13,6 +13,7 @@ require get_template_directory() . '/inc/customizer.php';
 include_once get_template_directory().'/includes/gutenburg.php';
 include_once get_template_directory().'/includes/helper-functions.php';
 include_once get_template_directory().'/includes/bootstrap-wp-navwalker.php';
+include_once get_template_directory().'/includes/page-carousel.php';
 //include_once get_template_directory().'/includes/acf-custom-widget.php';
 
 /* Hooks */
