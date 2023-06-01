@@ -112,24 +112,6 @@ if (get_field('frontdesk_property_id')) {
 <section class="section pb-0">
     <div class="container">
         <div class="row">
-            <!--            <div class="col-12">-->
-            <!--                <div class="pr-lg-2">-->
-            <!--                    <p class="text-primary font-weight-bold"> -->
-            <?php //echo the_field('address'); ?><!--</p>-->
-            <!--                </div>-->
-            <!--            </div>-->
-
-            <?php
-
-            $propUrl = 'https://stayrevy.kigobook.com/properties/';
-            $propName = get_field('public_headline');
-            $propName = strtolower($propName);
-            $propName = preg_replace('/\s+/', ' ', $propName);
-            $propName = trim(preg_replace('/\s+/', ' ', $propName));
-            $propName = str_replace(" ", "-", $propName);
-            $propLink = $propUrl . strtolower($propName);
-
-            ?>
 
             <div class="col-12 col-lg-8 order-0">
 
@@ -140,7 +122,7 @@ if (get_field('frontdesk_property_id')) {
                         Book Now
                     </a>
                 <?php else : ?>
-                    <a target="_blank" href="<?php echo $propLink; ?>" class="btn btn-primary mb-2">
+                    <a target="_blank" href="<?php the_field('guestylink'); ?>" class="btn btn-primary mb-2">
                         Book Now
                     </a>
                 <?php endif; ?>
@@ -200,7 +182,6 @@ if (get_field('frontdesk_property_id')) {
                         <?php the_field('accommodation_description'); ?>
                     </div>
 
-
                     <?php
                     $link = get_field('airbnb_link');
                     if ($link) : ?>
@@ -208,7 +189,7 @@ if (get_field('frontdesk_property_id')) {
                             Book Now
                         </a>
                     <?php else : ?>
-                        <a target="_blank" href="<?php echo $propLink; ?>" class="btn btn-primary mb-2">
+                        <a target="_blank" href="<?php the_field('guestylink'); ?>" class="btn btn-primary mb-2">
                             Book Now
                         </a>
                     <?php endif; ?>
