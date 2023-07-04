@@ -1,7 +1,7 @@
 <?php $footerimageurl = get_field('footer_image', 'options'); ?>
 
 <footer style="background: #1b1b1b url(<?php echo $footerimageurl['sizes']['large'] ?>) no-repeat center bottom; background-size: cover;">
-    <section class="layout__footer">
+    <section class="layout__footer sproing_runcloud">
         <div class="container">
             <div class="row justify-content-center justify-content-md-between align-items-center">
                 <div class="col-11 col-md-5">
@@ -44,7 +44,7 @@
                     </p>
                 </div>
                 <div class="col-lg-4 text-center text-lg-right">
-                    <p class="mb-0">Designed, Developed and Hosted by <a href="https://sproing.ca" target="_blank" class="text-white">Sproing&nbsp;Creative</a>
+                    <p class="mb-0">Designed, Developed and Hosted by <a href="https://sproing.ca" target="_blank" class="text-white">Sproing&nbsp;Creative</a>.
                     </p>
                 </div>
             </div>
