@@ -186,3 +186,17 @@ a.link--no-focus {
 .panel {
     overflow-x: scroll;
 }
+
+.main-nav .navbar-nav.desktop-only .menu-item.active {
+    background-color: #659640;
+}
+.main-nav .navbar-nav.desktop-only .nav-link {
+    padding: 1.2rem 1.2rem;
+}
+.main-nav .navbar-nav.desktop-only .menu-item {
+    border-bottom: none;
+    .dropdown-menu .menu-item a.nav-link {
+        font-size: .8rem;
+    }
+}
+

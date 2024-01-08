@@ -1,5 +1,8 @@
 jQuery(function () {
 
+    // Add active class to parent menu item for desktop menu
+    jQuery('.dropdown-menu .menu-item.active').parents('.menu-item').addClass('active');
+
     // BIG Slide
     var menuLink = jQuery('.menu-link').bigSlide({
         side: 'right',
