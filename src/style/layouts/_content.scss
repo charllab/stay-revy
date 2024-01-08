@@ -409,10 +409,20 @@ button.owl-dot.active {
 // ******** listings copy & paste ******** //
 
 .listing-page-sidemenu {
+    position: relative;
+    z-index: 2001;
     color: $primary;
     margin-bottom: 2rem;
     border-radius: 0;
     border: 1px solid darken(#fafafa, 5%);
+    background-color: #fff;
+    @include media-breakpoint-up(lg) {
+        margin-top: -240px;
+        border-radius: 8px;
+    }
+    @include media-breakpoint-up(xxl) {
+        margin-top: -300px;
+    }
 }
 
 .listing-page-toggle {
@@ -428,12 +438,12 @@ button.owl-dot.active {
     border-bottom-left-radius: .5rem;
     border: .5rem solid $white;
 
-    @include media-breakpoint-up(xxl) {
-        width: 490px;
-    }
-
     @include media-breakpoint-down(xl) {
         height: 300px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        height: 440px;
     }
 }
 
@@ -636,3 +646,13 @@ ol.list-styled {
     justify-content: center;
 }
 
+.grid-listings {
+    @include media-breakpoint-up(md) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 2rem;
+    }
+    @include media-breakpoint-up(xl) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

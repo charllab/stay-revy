@@ -200,3 +200,14 @@ a.link--no-focus {
     }
 }
 
+body:not(.home) {
+    @include media-breakpoint-up(lg) {
+        .main-nav {
+            .nav-logo img {
+                width: 180px;
+                height: auto;
+            }
+        }
+    }
+}
+

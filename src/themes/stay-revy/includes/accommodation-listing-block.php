@@ -4,7 +4,7 @@
 <div class="listing-block-img d-none" style="background-image: url(<?php echo $image['sizes']['large']; ?>)"></div>
 <!--*End*-->
 
-    <div class="listing-block-wrapper mb-lg-1 d-xxl-flex">
+    <div class="listing-block-wrapper mb-lg-1">
         <?php
         //code to display the banners
         //check that the page has banners

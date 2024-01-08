@@ -1,5 +1,12 @@
 jQuery(function () {
 
+    //smooth scroll on property search results
+    if (window.location.href.startsWith('https://stayrevy.com/vacation-rentals?g=')) {
+        $('html, body').animate({
+            scrollTop: 400 // Scroll 200px down
+        }, 1000); // Duration of the animation in milliseconds (1000ms = 1s)
+    }
+
     // Add active class to parent menu item for desktop menu
     jQuery('.dropdown-menu .menu-item.active').parents('.menu-item').addClass('active');
 

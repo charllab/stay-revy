@@ -268,3 +268,17 @@ div#gform_confirmation_message_1 {
         -webkit-transform-origin: 0 0
     }
 }
+
+.form-cta-buttons {
+    .btn {
+        width: 100%;
+    }
+    @include media-breakpoint-up(lg) {
+        display: flex;
+        justify-content: center;
+        .btn {
+            min-width: 240px;
+            width: auto;
+        }
+    }
+}
