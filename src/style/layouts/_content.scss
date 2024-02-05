@@ -656,3 +656,42 @@ ol.list-styled {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
+
+.our-properties-container {
+    .owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next {
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba($primary,.6);
+        height: 44px;
+        width: 44px;
+        &:focus, &:hover, &active {
+            background-color: rgba($primary,1);
+        }
+        span {
+            font-size: 24px;
+        }
+    }
+    .our-properties-img {
+        min-height: 100%;
+        height: $spacer*28;
+        object-position: bottom;
+    }
+
+    .owl-dots {
+        cursor: pointer;
+        bottom: -$spacer;
+        button.owl-dot {
+            transform: none;
+            width: 24px;
+            height: 6px;
+            border: none;
+            background-color: lighten($primary, 15%);
+            margin-top: 0;
+            &.active {
+                background-color: $primary;
+            }
+        }
+    }
+}

@@ -43,6 +43,19 @@ jQuery(function () {
         dots: true
     });
 
+    // owl carousel
+    jQuery('.our-properties--slider').owlCarousel({
+        loop: true,
+        margin: 0,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        autoplayTimeout: 9000,
+        items: 1,
+        nav: true,
+        dots: true,
+        mouseDrag: false
+    });
+
     // Hero Carousel
     var owlhero = jQuery('#hero-slide').owlCarousel({
         loop: false,

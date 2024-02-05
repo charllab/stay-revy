@@ -37,15 +37,13 @@
 
         <?php get_template_part('includes/page', 'lead'); ?>
 
-        <!-- PingPong-->
-        <?php if (have_rows('pingpongs')): ?>
-            <div class="container-fluid pt-3 pb-md-4">
-                <?php while (have_rows('pingpongs')) : the_row(); ?>
-                    <?php get_template_part('partials/frontpage/ping-pong'); ?>
+        <?php if (have_rows('our_properties')): ?>
+            <div class="container-fluid pt-3 pb-md-4 our-properties-container">
+                <?php while (have_rows('our_properties')) : the_row(); ?>
+                    <?php get_template_part('partials/frontpage/ping-pong-carousel'); ?>
                 <?php endwhile; ?>
             </div>
         <?php endif; ?>
-        <!--PingPong-->
 
         <?php if (have_rows('activity_card')): ?>
 
